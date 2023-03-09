@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# Tesla Homepage Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a paragraph explaining the project, what the project is about, and why I chose this project. (challenge myself with replicating a well-known brand's homepage)
 
-## Available Scripts
+## Code Style
 
-In the project directory, you can run:
+This is a paragraph explaining the technical setup of the project: as which languages were used and why I used them in a particular way. Use screenshots. Explain the tech that was used: ids, classes, and event listeners. Explain the commments.
 
 ### `npm start`
 
