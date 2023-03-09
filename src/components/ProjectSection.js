@@ -6,7 +6,7 @@ import { flexCenter } from '../theme/CustomTheme';
 import TeslaLogo from '../images/project-images/tesla-homepage/tesla-logo.png';
 import ParkLogo from '../images/project-images/national-park-service-finder/national-park-logo.png';
 import RehabLogo from '../images/project-images/rehab-typing-test/rehab-therapy-logo.png';
-import PortfolioLogo from '../images/project-images/portfolio-site/portfolio-site.png';
+import PortfolioLogo from '../images/project-images/portfolio-site/portfolio-logo.png';
 
 const projects = [
 
