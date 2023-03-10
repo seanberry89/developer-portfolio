@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Box, Button, Paper, Stack, styled, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, Button, Link, Paper, Stack, styled, Typography } from '@mui/material';
 
 import MobileStepper from '@mui/material/MobileStepper';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -82,20 +81,58 @@ const MobileImage = styled(Box) `
   opacity: 0.75;
 `;
 
-const PageLinks = styled(Link) `
-  font-size: 12px;
-  font-weight: 700;
+const ProjectPaper = styled(Paper) `
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #56903A;
+  height: 40px;
+  width: 100px;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 10px;
+
+`;
+
+const CodePaper = styled(Paper) `
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #C56C39;
+  height: 40px;
+  width: 100px;
   color: #fff;
-  background: red;
-  border-radius: 5px;
-  padding: 6px 12px;
-  white-space: nowrap;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 10px;
+
+`;
+
+const ProjectLink = styled(Link) `
+
   text-decoration: none;
+  transition: transform 0.75s ease-in-out;
 
   &:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
+    transform: scale(1.2);
+  };
+
+`;
+
+const CodeLink = styled(Link) `
+
+  text-decoration: none;
+  transition: transform 0.75s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  };
+
 `;
 
 const ChallengeImage = styled(Box) `
@@ -123,19 +160,28 @@ const ParkPage = () => {
           <ParkImageSwipe />
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
-            <Typography variant="h4">National Park Service (NPS) Finder</Typography>
 
-            <Paper sx={{ width: "200px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-              <Stack direction="row" alignItems="center" justifyContent="center">
-                <Typography color="#F0DB4F" variant="body2">JavaScript</Typography>
-                <Typography color="#264de4" variant="body2">CSS</Typography>
-                <Typography color="#e34c26" variant="body2">HTML</Typography>
-              </Stack>
-            </Paper>
+            <Stack direction="column" justifyContent="center" alignItems="center" spacing={3}>
+              <Typography variant="h3">National Park Service (NPS) Finder</Typography>
+              <Paper sx={{ width: "425px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+                <Stack direction="row" alignItems="center" justifyContent="center">
+                  <Typography color="#F0DB4F" variant="subtitle2">JavaScript</Typography>
+                  <Typography color="#61DBFB" variant="subtitle2">React</Typography>
+                  <Typography color="#1E88E5" variant="subtitle2">Material UI</Typography>
+                  <Typography color="#C56C39" variant="subtitle2">National Park Service API</Typography>
+                </Stack>
+              </Paper>
+              <Paper sx={{ width: "275px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+                <Stack direction="row" alignItems="center" justifyContent="center">
+                  <Typography color="#EA4335" variant="subtitle2">Google Maps API</Typography>
+                  <Typography color="#FFF" variant="subtitle2">Geolocation API</Typography>
+                </Stack>
+              </Paper>
+            </Stack>
 
             <Stack sx={{ px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="center">
               <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
-                <Typography color="#fff" fontWeight={500} variant="h5">My Objective</Typography>
+                <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
                 <Typography fontWeight={300} variant="subtitle2">This is the first sentence about the project.  This is the second sentence about the project.  This is the third sentence about the project.</Typography>
               </Stack>
               <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
@@ -145,8 +191,8 @@ const ParkPage = () => {
             </Stack>
 
             <Stack justifyContent="center" alignItems="center" direction="row" spacing={5}>
-              <PageLinks to="/teslapage" rel="noopener">Source Code</PageLinks>
-              <PageLinks to="/teslapage" rel="noopener">Live Project</PageLinks>
+              <CodeLink href="https://github.com/seanberry89/nps-finder" rel="noopener" target="_blank"><CodePaper elevation={6}>Source Code</CodePaper></CodeLink>
+              <ProjectLink to="/teslapage" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
             </Stack>
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>

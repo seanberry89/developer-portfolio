@@ -3,7 +3,7 @@ import { Box, Grid, Paper, Stack, styled, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { flexCenter } from '../theme/CustomTheme';
 
-import TeslaLogo from '../images/project-images/tesla-homepage/tesla-logo.png';
+import TeslaLogo from '../images/project-images/tesla-clone/tesla-logo.png';
 import ParkLogo from '../images/project-images/national-park-service-finder/national-park-logo.png';
 import RehabLogo from '../images/project-images/rehab-typing-test/rehab-therapy-logo.png';
 import PortfolioLogo from '../images/project-images/portfolio-site/portfolio-logo.png';
@@ -12,7 +12,7 @@ const projects = [
 
   { id: 1, title: "NPS Finder", description: "An application for hikers and outdoor enthusiasts.  This program uses the National Park Service API & Google Maps API to find national parks and historic sites around the user’s location.", image: ParkLogo, url: "/national-park-service-finder"},
 
-  { id: 2, title: "Rehab Typing Test", description: "An application for occupational therapists to assist in the rehabilitation process (typing skills).  This program calculates words-per-minute, typing accuracy, and identifies the most missed keys for the user which informs the therapist on assistive technology choice and treatment efficacy.", image: RehabLogo, url: "/rehab-typing-test"},
+  { id: 2, title: "Rehab Typing Test", description: "An application for occupational therapists to assist in the rehabilitation process (typing skills).  This program calculates words-per-minute, typing accuracy, and identifies the most missed keys for the user; and then informs the therapist on assistive technology choice and treatment efficacy.", image: RehabLogo, url: "/rehab-typing-test"},
 
   { id: 3, title: "Tesla Clone", description: "An application that demonstrates the remake of the Tesla homepage.  No frameworks.  No APIs.  Just JavaScript.", image: TeslaLogo, url: "/tesla-clone"},
 
@@ -80,7 +80,7 @@ const ProjectSection = () => {
       <Stack sx={{ position: "relative", textAlign: "center" }} direction="column" alignItems="center" justifyContent="center">
         <Typography sx={{ position: "relative", mb: 1 }} variant="h4">The Road of <StyledBox></StyledBox>Projects</Typography>
         <Typography sx={{ position: "absolute", top: 20, zIndex: 3, fontFamily: "Holland", transform: "rotate(-5deg)" }} color="red" variant="h4">of Trials</Typography>
-        <Typography sx={{ pt: 5, px: { xs: 5, md: 15 } }} fontWeight={300} variant="body1">All developers need to prove themselves before stepping outward into the unknown.&nbsp; Below are some examples of the tests and triumphs I had to face as a traveler on the <Typography sx={{ display: "inline" }} variant="body1" fontWeight={700}>Road of Trials</Typography>:</Typography>
+        <Typography sx={{ pt: 5, px: { xs: 5, md: 15 } }} fontWeight={300} variant="body1">All developers need to prove themselves before stepping outward into the unknown.&nbsp; Below are some examples of the tests and triumphs I had to face as a traveler on the <span style={{ color: "red", fontFamily: "Holland", fontSize: "22px" }}>Road of Trials:</span></Typography>
         <Box sx={{ ...flexCenter, pt: 1 }}>
           <Grid rowSpacing={3} columnSpacing={3} container>
             {projects.map(project => {

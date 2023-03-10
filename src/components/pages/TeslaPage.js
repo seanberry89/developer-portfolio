@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Box, Button, Paper, Stack, styled, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, Button, Link, Paper, Stack, styled, Typography } from '@mui/material';
 
 import MobileStepper from '@mui/material/MobileStepper';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -10,10 +9,10 @@ import SwipeableViews from 'react-swipeable-views';
 import { imageDot } from '../../theme/CustomTheme';
 
 import forest from '../../images/forest-transparent.png';
-import TeslaHomepage from '../../images/project-images/tesla-homepage/tesla-homepage.png';
-import TeslaMenu from '../../images/project-images/tesla-homepage/tesla-menu.png';
-import TeslaFooter from '../../images/project-images/tesla-homepage/tesla-accessories.png';
-import TeslaMobile from '../../images/project-images/tesla-homepage/tesla-mobile.png';
+import TeslaHomepage from '../../images/project-images/tesla-clone/tesla-homepage.png';
+import TeslaMenu from '../../images/project-images/tesla-clone/tesla-menu.png';
+import TeslaFooter from '../../images/project-images/tesla-clone/tesla-accessories.png';
+import TeslaMobile from '../../images/project-images/tesla-clone/tesla-mobile.png';
 
 
 document.onload = () => {
@@ -67,20 +66,58 @@ const MobileImage = styled(Box) `
   opacity: 0.75;
 `;
 
-const PageLinks = styled(Link) `
-  font-size: 12px;
-  font-weight: 700;
+const ProjectPaper = styled(Paper) `
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #FFF;
+  height: 40px;
+  width: 100px;
+  color: #E82127;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 10px;
+
+`;
+
+const CodePaper = styled(Paper) `
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #E82127;
+  height: 40px;
+  width: 100px;
   color: #fff;
-  background: red;
-  border-radius: 5px;
-  padding: 6px 12px;
-  white-space: nowrap;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 10px;
+
+`;
+
+const ProjectLink = styled(Link) `
+
   text-decoration: none;
+  transition: transform 0.75s ease-in-out;
 
   &:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
+    transform: scale(1.2);
+  };
+
+`;
+
+const CodeLink = styled(Link) `
+
+  text-decoration: none;
+  transition: transform 0.75s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  };
+
 `;
 
 const ChallengeImage = styled(Box) `
@@ -108,19 +145,19 @@ const TeslaPage = () => {
           <TeslaImageSwipe />
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
-            <Typography variant="h4">Tesla Clone</Typography>
+            <Typography variant="h3">Tesla Clone</Typography>
 
             <Paper sx={{ width: "200px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
               <Stack direction="row" alignItems="center" justifyContent="center">
-                <Typography color="#F0DB4F" variant="body2">JavaScript</Typography>
-                <Typography color="#264de4" variant="body2">CSS</Typography>
-                <Typography color="#e34c26" variant="body2">HTML</Typography>
+                <Typography color="#F0DB4F" variant="subtitle2">JavaScript</Typography>
+                <Typography color="#264de4" variant="subtitle2">CSS</Typography>
+                <Typography color="#e34c26" variant="subtitle2">HTML</Typography>
               </Stack>
             </Paper>
 
             <Stack sx={{ px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="center">
               <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
-                <Typography color="#fff" fontWeight={500} variant="h5">My Objective</Typography>
+                <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
                 <Typography fontWeight={300} variant="subtitle2">This is the first sentence about the project.  This is the second sentence about the project.  This is the third sentence about the project.</Typography>
               </Stack>
               <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
@@ -130,8 +167,8 @@ const TeslaPage = () => {
             </Stack>
 
             <Stack justifyContent="center" alignItems="center" direction="row" spacing={5}>
-              <PageLinks to="/teslapage" rel="noopener">Source Code</PageLinks>
-              <PageLinks to="/teslapage" rel="noopener">Live Project</PageLinks>
+              <CodeLink href="https://github.com/seanberry89/tesla-clone" rel="noopener" target="_blank"><CodePaper elevation={6}>Source Code</CodePaper></CodeLink>
+              <ProjectLink to="/teslapage" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
             </Stack>
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>

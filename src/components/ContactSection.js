@@ -88,7 +88,7 @@ const ContactSection = () => {
             <Typography sx={{ position: "absolute", top: -40, left: -50, zIndex: 3, fontFamily: "Holland", transform: "rotate(-15deg)" }} color="red" variant="h4">The Call</Typography>
             <StyledBox></StyledBox><Typography variant="h4">Contact to Adventure</Typography>
           </Box>
-          <Typography sx={{ px: 5 }} fontWeight={300} variant="body1">Thus comes the time when the developer — equipped with frameworks, functions, and a few lines of CSS — must answer the<Typography sx={{ display: "inline" }} variant="body1" fontWeight={700}> Call to Adventure</Typography>.&nbsp; Bugs and errors must be overcome.&nbsp; Deadlines fought and won.&nbsp; Please contact me via email or mobile if you’re looking for a developer that’s awaiting the call to his next adventure.</Typography>
+          <Typography sx={{ px: 5 }} fontWeight={300} variant="body1">Thus comes the time when the developer — equipped with frameworks, functions, and a few lines of CSS — must answer the<span style={{ color: "red", fontFamily: "Holland", fontSize: "22px" }}> Call to Adventure.</span>&nbsp; Bugs and errors must be overcome.&nbsp; Deadlines fought and won.&nbsp; Please contact me via email or mobile if you’re looking for a developer that’s awaiting the call to his next adventure.</Typography>
           <Stack sx={{ pt: 2 }} direction="row" divider={<Divider color="#fff" orientation="vertical" flexItem />}>
             <Typography variant="body2">sean.michael.berry@gmail.com</Typography>
             <Typography variant="body2">630-433-0161</Typography>
