@@ -167,14 +167,15 @@ const ParkPage = () => {
                 <Stack direction="row" alignItems="center" justifyContent="center">
                   <Typography color="#F0DB4F" variant="subtitle2">JavaScript</Typography>
                   <Typography color="#61DBFB" variant="subtitle2">React</Typography>
-                  <Typography color="#1E88E5" variant="subtitle2">Material UI</Typography>
+                  <Typography color="#1E88E5" variant="subtitle2">MUI Core</Typography>
                   <Typography color="#C56C39" variant="subtitle2">National Park Service API</Typography>
                 </Stack>
               </Paper>
-              <Paper sx={{ width: "275px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+              <Paper sx={{ width: "375px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
                 <Stack direction="row" alignItems="center" justifyContent="center">
                   <Typography color="#EA4335" variant="subtitle2">Google Maps API</Typography>
                   <Typography color="#FFF" variant="subtitle2">Geolocation API</Typography>
+                  <Typography color="#61DBFB" variant="subtitle2">Context API</Typography>
                 </Stack>
               </Paper>
             </Stack>

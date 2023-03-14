@@ -25,14 +25,15 @@ const ContactButton = styled(Button) `
   border-radius: 15px;
   padding: 10px 30px;
   margin-top: 10px;
+  transition: transform 0.75s ease-in-out;
 
   &:hover {
-    color: green;
-    border: 1px solid green;
+    transform: scale(1.1);
   };
 
   &:active {
-    transform: scale(1.1);
+    color: green;
+    border: 1px solid green;
   };
 
 `;

@@ -14,10 +14,10 @@ const techs = [
   {id: 2, text: "CSS3", color: "#264de4", icon: <DiCss3 color="#264de4" size={30} /> },
   {id: 3, text: "JavaScript", color: "#F0DB4F", icon: <DiJavascript color="#F0DB4F" size={30} /> },
   {id: 4, text: "React", color: "#61DBFB", icon: <FaReact color="#61DBFB" size={30} /> },
-  {id: 5, text: "Material UI", color: "#1E88E5", icon: <SiMaterialui color="#1E88E5" size={30} /> },
+  {id: 5, text: "MUI Core", color: "#1E88E5", icon: <SiMaterialui color="#1E88E5" size={30} /> },
   {id: 6, text: "Git", color: "#F1502F", icon: <FaGitAlt color="#F1502F" size={30} /> },
   {id: 7, text: "NPM", color: "#CC3534", icon: <SiNpm color="#CC3534" size={30} /> },
-  {id: 8, text: "WordPress", color: "#21759b", icon: <FaWordpress color="#21759b" size={30} /> },
+  {id: 8, text: "WordPress", color: "#21759b", icon: <FaWordpress color="#21759b" size={30} /> }
 ];
 
 const StyledBox = styled(Box) `
@@ -63,7 +63,7 @@ const AboutSection = () => {
           </Box>
           <Typography sx={{ lineHeight: 1.5, px: 5 }} fontWeight={300} variant="body1">The developer’s journey — of answering the call to the next project and adventure, overcoming challenges, learning from mistakes, and progressing all the while — can be the same as the storytelling structure of <span style={{ color: "red", fontFamily: "Holland", fontSize: "22px" }}>The Hero’s Journey.</span>&nbsp; Or, this is what I tell myself.&nbsp; For I am a self-taught front-end developer who’s learned much about solving problems while sailing through the waters of the uncomfortable and the unknown.</Typography>
           <Typography sx={{ lineHeight: 1.5, px: 5 }} fontWeight={300} variant="body1">Where does the journey lead?&nbsp; What am I after?&nbsp; I want to integrate creativity and code to create exciting front-end products.&nbsp; After hours, when I am not crunching code, the journey continues: I can be found exploring the trails of a new hike or writing some fiction at a nearby coffeehouse.</Typography>
-          <ResumeLink to="/resume-page">Resume</ResumeLink>
+          <ResumeLink to="/resume">Resume</ResumeLink>
           <Box component="img" src={personalPic} alt="this is me" sx={{ width: "125px", height: "150px", borderRadius: 10, opacity: 0.85 }}></Box>
         </Stack>
         <Stack sx={{ py: 3, width: { xs: "100%", md: "50%" } }} justifyContent="center" alignItems="center" direction="column">

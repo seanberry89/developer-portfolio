@@ -34,9 +34,9 @@ function App() {
                 <Route exact path="/" element={<Homepage />} />
                 <Route exact path="/national-park-service-finder" element={<ParkPage />} />
                 <Route exact path="/rehab-typing-test" element={<TypingPage />} />
-                <Route exact path="/portfolio-site" element={<PortfolioPage />} />
+                <Route exact path="/my-portfolio" element={<PortfolioPage />} />
                 <Route exact path="/tesla-clone" element={<TeslaPage />} />
-                <Route exact path="/resume-page" element={<ResumePage />} />
+                <Route exact path="/resume" element={<ResumePage />} />
             </Routes>
           <Footer />
         </Box>

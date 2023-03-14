@@ -158,7 +158,7 @@ const PortfolioPage = () => {
               <Stack direction="row" alignItems="center" justifyContent="center">
                 <Typography color="#F0DB4F" variant="subtitle2">JavaScript</Typography>
                 <Typography color="#61DBFB" variant="subtitle2">React</Typography>
-                <Typography color="#1E88E5" variant="subtitle2">Material UI</Typography>
+                <Typography color="#1E88E5" variant="subtitle2">MUI Core</Typography>
                 <Typography color="#FFF" variant="subtitle2">React Router</Typography>
               </Stack>
             </Paper>

@@ -120,17 +120,15 @@ const CodeLink = styled(Link) `
 
 `;
 
-const ChallengeImage = styled(Box) `
-  height: 200px;
-  width: 150px;
-  object-fit: cover;
-  overflow: hidden;
-  transition: transform 1s ease-in-out;
-  border-radius: 10px;
+const TeslaSpan = styled(Box) `
 
-  &:hover {
-    transform: scale(1.1);
-  }
+  display: inline;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  color: #E82127;
+
+  padding: 2px 5px;
+
 `;
 
 const TeslaPage = () => {
@@ -140,7 +138,7 @@ const TeslaPage = () => {
       <Box sx={{ position: "relative", backgroundColor: theme => theme.palette.primary.main, overflow: "hidden", py: 10 }}>
 
         <ForestBackground></ForestBackground>
-        <Stack sx={{ position: "relative", textAlign: "center", px: 3 }} direction="column" justifyContent="center" alignItems="center">
+        <Stack sx={{ position: "relative", textAlign: "center", px: { xs: 2, md: 7 } }} direction="column" justifyContent="center" alignItems="center">
 
           <TeslaImageSwipe />
 
@@ -155,14 +153,16 @@ const TeslaPage = () => {
               </Stack>
             </Paper>
 
-            <Stack sx={{ px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="center">
-              <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
+            <Stack sx={{ px: 5, width: "100%" }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="center">
+              <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
-                <Typography fontWeight={300} variant="subtitle2">This is the first sentence about the project.  This is the second sentence about the project.  This is the third sentence about the project.</Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">For the first project I wanted to demonstrate the basic knowledge of a front-end developer: HTML, CSS, and JavaScript.&nbsp; To show this knowledge I wanted to clone the homepage of a recognizable brand — so I chose Tesla.&nbsp; Why Tesla?&nbsp; I found the UI to be simple (and not busy), but eye-catching when showcasing their product images.&nbsp; The product images are unavoidable, and I like that.&nbsp; This project mirrors the look and functionality of the Tesla homepage.
+                </Typography>
               </Stack>
-              <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
-                <Typography color="#fff" fontWeight={500} variant="h5">Project Features / Tech</Typography>
-                <Typography fontWeight={300} variant="subtitle2">This is the first sentence about the project.  This is the second sentence about the project.  This is the third sentence about the project.</Typography>
+              <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
+                <Typography color="#fff" fontWeight={500} variant="h5">The Road</Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">Since I had no frameworks for this application, I utilized <TeslaSpan>ID selectors</TeslaSpan> for initializing functions and events with Javascript and <TeslaSpan>class selectors</TeslaSpan> for styling the structural elements with CSS.&nbsp; I divided the seven product categories into sections and styled all of their interior elements — containers, buttons, and text — via structural classes.&nbsp; The side menu and faded background are toggled via event listeners, and the arrow icon in the first section repositions the document via an <TeslaSpan>onClick</TeslaSpan> function.
+                </Typography>
               </Stack>
             </Stack>
 
@@ -172,14 +172,9 @@ const TeslaPage = () => {
             </Stack>
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-              <Stack sx={{ width: "100%", py: 4, px: 5 }} direction={{ xs: "column", md: "row" }} alignItems="center" justifyContent="center" spacing={5}>
-                <Stack sx={{ width: { xs: "100%", md: "60%"}, textAlign: "center" }} direction="column" spacing={2}>
-                  <Typography color="#fff" fontWeight="bold" variant="h6" sx={{ mb: 1 }}>Project Challenges</Typography>
-                  <Typography color="#fff" fontWeight={300} variant="subtitle2" sx={{ mb: 1 }}>This is the first sentence about the project.  This is the second sentence about the project.</Typography>
-                </Stack>
-                <Box sx={{ width: { xs: "100%", md: "40%"} }}>
-                  <ChallengeImage component="img" src="https://source.unsplash.com/random/2" />
-                </Box>
+              <Stack sx={{ width: "100%", textAlign: "center", py: 4, px: 5 }} direction="column" alignItems="center" justifyContent="center">
+                <Typography color="#fff" fontWeight={500} variant="h5">The Challenge</Typography>
+                <Typography color="#fff" fontSize={15} fontWeight={300} variant="subtitle2" sx={{ lineHeight: 1.75 }}>A problem I had to overcome was the auto scroll and position lock between product sections in the Tesla homepage.&nbsp; From the portfolio itself I learned how to reposition the document based on the click of an event listener, but I was unfamiliar with the position lock of the document when the user released the scroll.&nbsp; To recreate this functionality, I had to learn the scroll offsets from the <TeslaSpan>window</TeslaSpan> object, or more specifically, the <TeslaSpan>scrollY</TeslaSpan> property.&nbsp; But the catch and the release of the user’s position within a given time was another question.&nbsp; After some time I learned to use the <TeslaSpan>setTimeout</TeslaSpan> and the <TeslaSpan>clearTimeout</TeslaSpan> functions as a means of scrolling the document to the nearest section after a pause.&nbsp; Each section was given its own conditional that checked the pixel count range, and lastly, everything was wrapped and ran inside a scroll event listener.</Typography>
               </Stack>
             </Paper>
 

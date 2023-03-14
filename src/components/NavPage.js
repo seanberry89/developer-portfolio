@@ -54,7 +54,7 @@ const NavPage = () => {
               <MenuItem onClick={handleClose}><PageLink to="/national-park-service-finder">NPS Finder</PageLink></MenuItem>
               <MenuItem onClick={handleClose}><PageLink to="/rehab-typing-test">Rehab Typing Test</PageLink></MenuItem>
               <MenuItem onClick={handleClose}><PageLink to="/tesla-clone">Tesla Clone</PageLink></MenuItem>
-              <MenuItem onClick={handleClose}><PageLink to="/portfolio-site">My Portfolio</PageLink></MenuItem>
+              <MenuItem onClick={handleClose}><PageLink to="/my-portfolio">My Portfolio</PageLink></MenuItem>
             </Menu>
           </Box>
         </Stack>

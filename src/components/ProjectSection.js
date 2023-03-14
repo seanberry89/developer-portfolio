@@ -16,7 +16,7 @@ const projects = [
 
   { id: 3, title: "Tesla Clone", description: "An application that demonstrates the remake of the Tesla homepage.  No frameworks.  No APIs.  Just JavaScript.", image: TeslaLogo, url: "/tesla-clone"},
 
-  { id: 4, title: "My Portfolio", description: "A front-end developer portfolio that’s made of ReactJS, Material UI, and \"The Hero’s Journey,\" a storytelling structure by Joseph Campbell.", image: PortfolioLogo, url: "/portfolio-site"}
+  { id: 4, title: "My Portfolio", description: "A front-end developer portfolio that’s made of ReactJS, Material UI, and \"The Hero’s Journey,\" a storytelling structure by Joseph Campbell.", image: PortfolioLogo, url: "/my-portfolio"}
 
 ];
 
@@ -63,6 +63,7 @@ const StyledPaper = styled(Paper) `
   border-radius: 10px;
   padding: 0px 25px;
 `;
+
 
 const StyledBox = styled(Box) `
   position: absolute;
