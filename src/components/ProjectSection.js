@@ -8,15 +8,44 @@ import ParkLogo from '../images/project-images/national-park-service-finder/nati
 import RehabLogo from '../images/project-images/rehab-typing-test/rehab-therapy-logo.png';
 import PortfolioLogo from '../images/project-images/portfolio-site/portfolio-logo.png';
 
+
 const projects = [
 
-  { id: 1, title: "NPS Finder", description: "An application for hikers and outdoor enthusiasts.  This program uses the National Park Service API & Google Maps API to find national parks and historic sites around the user’s location.", image: ParkLogo, url: "/national-park-service-finder"},
+  { id: 1, title: "NPS Finder", description: "An application for hikers and outdoor enthusiasts.  This program uses the National Park Service API & Google Maps API to find national parks and historic sites around the user’s location.", image: ParkLogo, url: "/national-park-service-finder", style: {
+    color: "#56903A",
+    border: "1.5px solid #56903A",
+    hover: {
+      border: "1.5px solid #56903A",
+      background: "rgba(86, 144, 58, 0.18)"
+    }
+  }},
 
-  { id: 2, title: "Rehab Typing Test", description: "An application for occupational therapists to assist in the rehabilitation process (typing skills).  This program calculates words-per-minute, typing accuracy, and identifies the most missed keys for the user; and then informs the therapist on assistive technology choice and treatment efficacy.", image: RehabLogo, url: "/rehab-typing-test"},
+  { id: 2, title: "Rehab Typing Test", description: "An application for occupational therapists to assist in the rehabilitation process (typing skills).  This program calculates words-per-minute, typing accuracy, and identifies the most missed keys for the user; and then informs the therapist on assistive technology choice and treatment efficacy.", image: RehabLogo, url: "/rehab-typing-test", style: {
+    color: "#2F7ABF",
+    border: "1.5px solid #2F7ABF",
+    hover: {
+      border: "1.5px solid #2F7ABF",
+      backgroundColor: "rgba(47, 122, 191, 0.18)"
+    }
+  }},
 
-  { id: 3, title: "Tesla Clone", description: "An application that demonstrates the remake of the Tesla homepage.  No frameworks.  No APIs.  Just JavaScript.", image: TeslaLogo, url: "/tesla-clone"},
+  { id: 3, title: "My Portfolio", description: "A front-end developer portfolio that’s made of ReactJS, Material UI, and \"The Hero’s Journey,\" a storytelling structure by Joseph Campbell.", image: PortfolioLogo, url: "/my-portfolio", style: {
+    color: "#FFF",
+    border: "1.5px solid #FFF",
+    hover: {
+      border: "1.5px solid #FFF",
+      backgroundColor: "rgba(255, 255, 255, 0.18)"
+    }
+  }},
 
-  { id: 4, title: "My Portfolio", description: "A front-end developer portfolio that’s made of ReactJS, Material UI, and \"The Hero’s Journey,\" a storytelling structure by Joseph Campbell.", image: PortfolioLogo, url: "/my-portfolio"}
+  { id: 4, title: "Tesla Clone", description: "An application that demonstrates the remake of the Tesla homepage.  No frameworks.  No APIs.  Just JavaScript.", image: TeslaLogo, url: "/tesla-clone", style: {
+    color: "#E82127",
+    border: "1.5px solid #E82127",
+    hover: {
+      border: "1.5px solid #E82127",
+      backgroundColor: "rgba(90, 12, 15, 0.18)"
+    }
+  }}
 
 ];
 
@@ -37,16 +66,12 @@ const ProjectLink = styled(Link) `
   display: block;
   font-size: 12px;
   font-weight: 500;
-  color: red;
   background-color: transparent;
-  border: 1.5px solid red;
   border-radius: 15px;
   padding: 10px 25px;
   text-decoration: none;
 
   &:hover {
-    background-color: rgba(255, 0, 0, 0.15);
-    border: 1.5px solid red;
     font-weight: 600;
   }
 
@@ -74,6 +99,7 @@ const StyledBox = styled(Box) `
   transform: translate(3px, -20px);
 `;
 
+console.log(projects);
 
 const ProjectSection = () => {
   return (
@@ -90,12 +116,12 @@ const ProjectSection = () => {
                   <StyledPaper elevation={10}>
                     <Stack sx={{ height: "100%", py: 5 }} justifyContent="space-between" alignItems="center" direction={{ xs: "column", md: "row" }}>
                       <Box sx={{ width: { xs: "100%", md: "50%"}, alignItems: "center" }}>
-                        <ProjectImage component="img" src={project.image}></ProjectImage>
+                        <ProjectImage component="img" src={project.image} />
                       </Box>
                       <Stack sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                         <Typography color="#fff" fontWeight={500} variant="h5">{project.title}</Typography>
-                        <Typography sx={{ lineHeight: 1.5 }} color="#fff" fontWeight={300} variant="body2">{project.description}</Typography>
-                        <ProjectLink to={project.url}>View Project</ProjectLink>
+                        <Typography sx={{ lineHeight: 1.75 }} color="#fff" fontWeight={300} variant="body2">{project.description}</Typography>
+                        <ProjectLink sx={project.style} to={project.url}>View Project</ProjectLink>
                       </Stack>
                     </Stack>
                   </StyledPaper>

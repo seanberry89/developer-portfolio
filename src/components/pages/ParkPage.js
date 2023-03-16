@@ -70,6 +70,8 @@ const ForestBackground = styled(Box) `
 const PageImage = styled(Box) `
   display: block;
   height: 400px;
+  border: 3px solid #56903A;
+  border-radius: 5px;
   object-fit: cover;
   opacity: 0.75;
 `;
@@ -77,6 +79,8 @@ const PageImage = styled(Box) `
 const MobileImage = styled(Box) `
   display: block;
   height: 400px;
+  border: 3px solid #56903A;
+  border-radius: 5px;
   object-fit: contain;
   opacity: 0.75;
 `;

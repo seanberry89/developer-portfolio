@@ -10,12 +10,12 @@ import { flexColumn } from '../../theme/CustomTheme';
 const Homepage = () => {
   return (
     <Box sx={flexColumn}>
-        <HeroSection />
-        <AboutSection />
-        <ProjectSection />
-        <ContactSection />
+      <HeroSection />
+      <AboutSection />
+      <ProjectSection />
+      <ContactSection />
     </Box>
-  )
-}
+  );
+};
 
 export default Homepage;

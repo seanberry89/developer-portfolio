@@ -13,9 +13,45 @@ const StyledFade = styled(Fade) `
 
 `;
 
-const PageLink = styled(Link) `
+const ParkPageLink = styled(Link) `
+
+ color: #56903A;
+ font-size: 14px;
+ text-decoration: none;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+`;
+
+const TypingPageLink = styled(Link) `
+
+ color: #2F7ABF;
+ font-size: 14px;
+ text-decoration: none;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+`;
+
+const PortfolioPageLink = styled(Link) `
 
  color: #fff;
+ font-size: 14px;
+ text-decoration: none;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+`;
+
+const TeslaPageLink = styled(Link) `
+
+ color: #E82127;
  font-size: 14px;
  text-decoration: none;
 
@@ -51,10 +87,10 @@ const NavPage = () => {
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <Button size="large" id="fade-button" aria-controls={open ? 'fade-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick}>Other Projects</Button>
             <Menu id="fade-menu" MenuListProps={{'aria-labelledby': 'fade-button'}} anchorEl={anchorEl} open={open} onClose={handleClose} TransitionComponent={StyledFade}>
-              <MenuItem onClick={handleClose}><PageLink to="/national-park-service-finder">NPS Finder</PageLink></MenuItem>
-              <MenuItem onClick={handleClose}><PageLink to="/rehab-typing-test">Rehab Typing Test</PageLink></MenuItem>
-              <MenuItem onClick={handleClose}><PageLink to="/tesla-clone">Tesla Clone</PageLink></MenuItem>
-              <MenuItem onClick={handleClose}><PageLink to="/my-portfolio">My Portfolio</PageLink></MenuItem>
+              <MenuItem onClick={handleClose}><ParkPageLink to="/national-park-service-finder">NPS Finder</ParkPageLink></MenuItem>
+              <MenuItem onClick={handleClose}><TypingPageLink to="/rehab-typing-test">Rehab Typing Test</TypingPageLink></MenuItem>
+              <MenuItem onClick={handleClose}><PortfolioPageLink to="/my-portfolio">My Portfolio</PortfolioPageLink></MenuItem>
+              <MenuItem onClick={handleClose}><TeslaPageLink to="/tesla-clone">Tesla Clone</TeslaPageLink></MenuItem>
             </Menu>
           </Box>
         </Stack>

@@ -31,12 +31,12 @@ function App() {
         <Box sx={flexColumn}>
           { location.pathname === "/" ? ( <NavHome /> ) : ( <NavPage />) }
             <Routes>
-                <Route exact path="/" element={<Homepage />} />
-                <Route exact path="/national-park-service-finder" element={<ParkPage />} />
-                <Route exact path="/rehab-typing-test" element={<TypingPage />} />
-                <Route exact path="/my-portfolio" element={<PortfolioPage />} />
-                <Route exact path="/tesla-clone" element={<TeslaPage />} />
-                <Route exact path="/resume" element={<ResumePage />} />
+              <Route exact path="/" element={<Homepage />} />
+              <Route exact path="/national-park-service-finder" element={<ParkPage />} />
+              <Route exact path="/rehab-typing-test" element={<TypingPage />} />
+              <Route exact path="/my-portfolio" element={<PortfolioPage />} />
+              <Route exact path="/tesla-clone" element={<TeslaPage />} />
+              <Route exact path="/resume" element={<ResumePage />} />
             </Routes>
           <Footer />
         </Box>

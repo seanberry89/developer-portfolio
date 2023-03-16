@@ -55,6 +55,8 @@ const ForestBackground = styled(Box) `
 const PageImage = styled(Box) `
   display: block;
   height: 400px;
+  border: 3px solid #E82127;
+  border-radius: 5px;
   object-fit: cover;
   opacity: 0.75;
 `;
@@ -62,6 +64,8 @@ const PageImage = styled(Box) `
 const MobileImage = styled(Box) `
   display: block;
   height: 400px;
+  border: 3px solid #E82127;
+  border-radius: 5px;
   object-fit: contain;
   opacity: 0.75;
 `;
@@ -156,12 +160,12 @@ const TeslaPage = () => {
             <Stack sx={{ px: 5, width: "100%" }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="center">
               <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
-                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">For the first project I wanted to demonstrate the basic knowledge of a front-end developer: HTML, CSS, and JavaScript.&nbsp; To show this knowledge I wanted to clone the homepage of a recognizable brand — so I chose Tesla.&nbsp; Why Tesla?&nbsp; I found the UI to be simple (and not busy), but eye-catching when showcasing their product images.&nbsp; The product images are unavoidable, and I like that.&nbsp; This project mirrors the look and functionality of the Tesla homepage.
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">For the first project I wanted to demonstrate the basic knowledge of a front-end developer: HTML, CSS, and JavaScript.&nbsp; To show this knowledge I wanted to clone the homepage of a recognizable brand — so I chose Tesla.&nbsp; Why Tesla?&nbsp; I found the UI to be simple (and not busy), but eye-catching when showcasing their product images.&nbsp; The product images are unavoidable, and I like that.&nbsp; This application mirrors the look and functionality of the Tesla homepage.
                 </Typography>
               </Stack>
               <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Typography color="#fff" fontWeight={500} variant="h5">The Road</Typography>
-                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">Since I had no frameworks for this application, I utilized <TeslaSpan>ID selectors</TeslaSpan> for initializing functions and events with Javascript and <TeslaSpan>class selectors</TeslaSpan> for styling the structural elements with CSS.&nbsp; I divided the seven product categories into sections and styled all of their interior elements — containers, buttons, and text — via structural classes.&nbsp; The side menu and faded background are toggled via event listeners, and the arrow icon in the first section repositions the document via an <TeslaSpan>onClick</TeslaSpan> function.
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">Since I had no frameworks for this application, I utilized <TeslaSpan>ID selectors</TeslaSpan> for initializing functions and events with Javascript and <TeslaSpan>class selectors</TeslaSpan> for styling the structural elements with CSS.&nbsp; I divided the seven product categories into sections and styled all of their interior elements — containers, buttons, and text — via structural classes.&nbsp; The side menu and faded background were toggled via event listeners, and the arrow icon in the first section repositioned the document via an <TeslaSpan>onClick</TeslaSpan> function.
                 </Typography>
               </Stack>
             </Stack>
@@ -173,7 +177,7 @@ const TeslaPage = () => {
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
               <Stack sx={{ width: "100%", textAlign: "center", py: 4, px: 5 }} direction="column" alignItems="center" justifyContent="center">
-                <Typography color="#fff" fontWeight={500} variant="h5">The Challenge</Typography>
+                <Typography color="#fff" fontWeight={500} variant="h5">The Challenge: <TeslaSpan>window.scrollY</TeslaSpan></Typography>
                 <Typography color="#fff" fontSize={15} fontWeight={300} variant="subtitle2" sx={{ lineHeight: 1.75 }}>A problem I had to overcome was the auto scroll and position lock between product sections in the Tesla homepage.&nbsp; From the portfolio itself I learned how to reposition the document based on the click of an event listener, but I was unfamiliar with the position lock of the document when the user released the scroll.&nbsp; To recreate this functionality, I had to learn the scroll offsets from the <TeslaSpan>window</TeslaSpan> object, or more specifically, the <TeslaSpan>scrollY</TeslaSpan> property.&nbsp; But the catch and the release of the user’s position within a given time was another question.&nbsp; After some time I learned to use the <TeslaSpan>setTimeout</TeslaSpan> and the <TeslaSpan>clearTimeout</TeslaSpan> functions as a means of scrolling the document to the nearest section after a pause.&nbsp; Each section was given its own conditional that checked the pixel count range, and lastly, everything was wrapped and ran inside a scroll event listener.</Typography>
               </Stack>
             </Paper>

@@ -61,6 +61,7 @@ const PageImage = styled(Box) `
   display: block;
   height: 400px;
   border: 3px solid #fff;
+  border-radius: 5px;
   object-fit: cover;
   opacity: 0.8;
 `;
@@ -69,6 +70,7 @@ const MobileImage = styled(Box) `
   display: block;
   height: 400px;
   border: 3px solid #fff;
+  border-radius: 5px;
   object-fit: contain;
   opacity: 0.8;
 `;
@@ -127,18 +129,17 @@ const CodeLink = styled(Link) `
 
 `;
 
-const ChallengeImage = styled(Box) `
-  height: 200px;
-  width: 150px;
-  object-fit: cover;
-  overflow: hidden;
-  transition: transform 1s ease-in-out;
-  border-radius: 10px;
+const PortfolioSpan = styled(Box) `
 
-  &:hover {
-    transform: scale(1.1);
-  }
+  display: inline;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  color: #212121;
+
+  padding: 2px 5px;
+
 `;
+
 
 const PortfolioPage = () => {
 
@@ -147,12 +148,12 @@ const PortfolioPage = () => {
       <Box sx={{ position: "relative", backgroundColor: theme => theme.palette.primary.main, overflow: "hidden", py: 10 }}>
 
         <ForestBackground></ForestBackground>
-        <Stack sx={{ position: "relative", textAlign: "center", px: 3 }} direction="column" justifyContent="center" alignItems="center">
+        <Stack sx={{ position: "relative", textAlign: "center", px: { xs: 2, md: 7 } }} direction="column" justifyContent="center" alignItems="center">
 
           <PortfolioImageSwipe />
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
-            <Typography variant="h3">The Developer's Portfolio</Typography>
+            <Typography variant="h3">The Developer's Journey</Typography>
 
             <Paper sx={{ width: "350px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
               <Stack direction="row" alignItems="center" justifyContent="center">
@@ -163,14 +164,17 @@ const PortfolioPage = () => {
               </Stack>
             </Paper>
 
-            <Stack sx={{ px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="center">
-              <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
+            <Stack sx={{ width: "100%", px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="center">
+              <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
-                <Typography fontWeight={300} variant="subtitle2">This is the first sentence about the project.  This is the second sentence about the project.  This is the third sentence about the project.</Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">To self-brand, which was the advice I was given when creating a developer portfolio, I knew I had to somehow bring interests, hobbies, and code together in a professional way.&nbsp; But how to do it?&nbsp; I knew I loved the outdoor lifestyle.&nbsp; I loved storytelling.&nbsp; I loved programming.&nbsp; But how was I to use the three to present myself in a developer’s portfolio?</Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">It was at this time, when I was sitting on the question, that I was also reading Joseph Campbell’s “The Hero with a Thousand Faces.”&nbsp; Then struck inspiration.&nbsp; I saw the similarities between the footsteps of the archetypal hero’s journey and the footsteps of my own journey as a front-end developer.&nbsp; Thereafter I tailored the design, the text, and even the brand logo, the sword and the stone, into a singular, storytelling theme.
+                </Typography>
               </Stack>
-              <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
-                <Typography color="#fff" fontWeight={500} variant="h5">Project Features / Tech</Typography>
-                <Typography fontWeight={300} variant="subtitle2">This is the first sentence about the project.  This is the second sentence about the project.  This is the third sentence about the project.</Typography>
+              <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
+                <Typography color="#fff" fontWeight={500} variant="h5">The Road</Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">The developer portfolio was constructed with the ReactJS library.&nbsp; For the styling I loaded the MUI Core framework.&nbsp; I structured the layout of the portfolio to be a single document of four components: Header, About, Projects, and Contact.&nbsp; Each project was given its own personal page (and URL) to provide further information so I handled the route matches via React Router API.</Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">For the portfolio’s navigation I created two components — one for the portfolio’s home and the other for the projects’ pages — which were then toggled via <PortfolioSpan>ternary operator.</PortfolioSpan>&nbsp; MUI’s built-in block components and <PortfolioSpan>styled-components</PortfolioSpan> assisted me in the structuring and the styling, alongside the <PortfolioSpan>sx</PortfolioSpan> styling prop, while the built-in <PortfolioSpan>breakpoints</PortfolioSpan> made the portfolio responsive.&nbsp; Netlify contributed with the <PortfolioSpan>stateless form handling</PortfolioSpan> as well.</Typography>
               </Stack>
             </Stack>
 
@@ -181,13 +185,15 @@ const PortfolioPage = () => {
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
               <Stack sx={{ width: "100%", py: 4, px: 5 }} direction={{ xs: "column", md: "row" }} alignItems="center" justifyContent="center" spacing={5}>
-                <Stack sx={{ width: { xs: "100%", md: "60%"}, textAlign: "center" }} direction="column" spacing={2}>
-                  <Typography color="#fff" fontWeight="bold" variant="h6" sx={{ mb: 1 }}>Project Challenges</Typography>
-                  <Typography color="#fff" fontWeight={300} variant="subtitle2" sx={{ mb: 1 }}>This is the first sentence about the project.  This is the second sentence about the project.</Typography>
+                <Stack sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }} direction="column" spacing={2}>
+                  <Typography color="#fff" fontWeight={500} variant="h5">The Challenege: <PortfolioSpan>MUI Core</PortfolioSpan></Typography>
+                  <Typography color="#fff" fontSize={15} fontWeight={300} variant="subtitle2" sx={{ lineHeight: 1.75 }}>Before knowing MUI Core I would use external stylesheets or CDNs (from Boostrap) for various test projects.&nbsp; So when I decided to load MUI Core to the developer portfolio because of its library — outside of knowing the basics of its styling already — I found myself confronted with some roadblocks.&nbsp; I wasn’t familiar with the API of a few block components, such as <PortfolioSpan>TextField,</PortfolioSpan> <PortfolioSpan>MobileStepper,</PortfolioSpan> <PortfolioSpan>Menu,</PortfolioSpan> and <PortfolioSpan>MenuItem;</PortfolioSpan> and I knew these were components I wanted to customize and structure inside the portfolio.&nbsp; Eventually, after scouring the MUI docs and StackOverflow, after trial and error, I was able to learn more about them and, more importantly, MUI Core.
+                  </Typography>
                 </Stack>
-                <Box sx={{ width: { xs: "100%", md: "40%"} }}>
-                  <ChallengeImage component="img" src="https://source.unsplash.com/random/2" />
-                </Box>
+                <Stack sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }} direction="column" spacing={2}>
+                  <Typography color="#fff" fontWeight={500} variant="h5">The Challenege: <PortfolioSpan>useLocation Hook</PortfolioSpan></Typography>
+                  <Typography color="#fff" fontSize={15} fontWeight={300} variant="subtitle2" sx={{ lineHeight: 1.75 }}>After I completed the Home Component of the portfolio, I began to construct the four project pages afterward.&nbsp; But this was when I stumbled across another issue.&nbsp; After installing React Router, after declaring <PortfolioSpan>BrowserRouter</PortfolioSpan> and configuring the <PortfolioSpan>Routes,</PortfolioSpan> I found the new pages to load not at the document’s top, but somewhere at the document’s center.&nbsp; As I didn’t want the portfolio’s readers to be navigated to the center of the page, I knew I had to fix this.&nbsp; What I had to learn was the <PortfolioSpan>location</PortfolioSpan> object and <PortfolioSpan>useLocation</PortfolioSpan> hook.&nbsp; I created a utility component, RouterScroll, and declared the <PortfolioSpan>location</PortfolioSpan> object to acquire the user’s navigation history.&nbsp; Then from inside the <PortfolioSpan>useEffect</PortfolioSpan> hook, I ran method <PortfolioSpan>scrollTo</PortfolioSpan> from the <PortfolioSpan>window</PortfolioSpan> object and set the document’s coordinates to the page top, and set the <PortfolioSpan>location</PortfolioSpan> object as the dependency of the <PortfolioSpan>useEffect</PortfolioSpan> hook.&nbsp; Lastly, as I wanted this to affect the navigation of the whole portfolio, I imported the component to <PortfolioSpan>index.js</PortfolioSpan> so all of the child components could be set thereafter.</Typography>
+                </Stack>
               </Stack>
             </Paper>
 
