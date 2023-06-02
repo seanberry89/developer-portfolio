@@ -3,9 +3,9 @@ import { Box, Link, List, ListItemText, Paper, Stack, styled, Typography, useMed
 import { Document, Page, pdfjs } from 'react-pdf';
 import { flexCenter } from '../../theme/CustomTheme';
 
-import myResume from '../../pdf/Resume-AccountManagement.pdf';
-import sierraClub from '../../images/sierra-club-logo.png';
-import forest from '../../images/forest-transparent.png';
+import myResume from '../../assets/pdf/Resume-AccountManagement.pdf';
+import sierraClub from '../../assets/images/sierra-club-logo.png';
+import forest from '../../assets/images/forest-transparent.png';
 
 const ForestBackground = styled(Box) `
 
@@ -45,7 +45,6 @@ const ProjectImage = styled(Box) `
 
 const SierraLink = styled(Link) `
 
-  display: inline-block;
   font-size: 12px;
   font-weight: 500;
   color: #487021;
@@ -58,7 +57,6 @@ const SierraLink = styled(Link) `
 
   &:hover {
     border: 1.5px solid #487021;
-    background-color: rgba(72, 112, 33, 0.15);
     font-weight: 600;
   }
 
@@ -109,11 +107,11 @@ const ResumePage = () => {
               </Box>
               <Box sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }}>
                 <Typography sx={{ fontWeight: 600 }} color="#fff" variant="h5">NYC Sierra Club</Typography>
-                <Typography color="#fff" variant="subtitle2">2020-2022</Typography>
+                <Typography color="#fff" variant="subtitle2">2020-2023</Typography>
                 <List sx={{ px: 5, textAlign: { xs: "center", md: "left" } }}>
-                    <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="volunteered as the sole web designer for an environmental non-profit in NY state" />
-                    <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="created and maintained the front-end components of the client's website via WordPress" />
-                    <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="managed backend updates and system maintenance to ensure consistent front-end perfomance" />
+                    <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="volunteered as the sole web designer and developer for an environmental non-profit in NYC" />
+                    <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="developed the structure, design, and optimization of front-end products for the client's website via WordPress" />
+                    <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="managed backend updates and system maintenance to ensure consistent client-side perfomance" />
                 </List>
                 <SierraLink href="https://nyc.sierraclub.org" target="_blank" rel="noopener">NYC Sierra Club</SierraLink>
               </Box>

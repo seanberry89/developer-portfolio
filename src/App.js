@@ -3,11 +3,11 @@ import { Box, CssBaseline } from '@mui/material';
 import { flexColumn } from './theme/CustomTheme';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import NavHome from './components/NavHome';
-import NavPage from './components/NavPage';
-import Footer from './components/Footer';
+import NavHome from './components/header/NavHome';
+import NavPage from './components/header/NavPage';
+import Footer from './components/footer/Footer';
 
-import Homepage from './components/pages/Homepage';
+import Home from './components/pages/Home';
 import ResumePage from './components/pages/ResumePage';
 import ParkPage from './components/pages/ParkPage';
 import TypingPage from './components/pages/TypingPage';
@@ -31,7 +31,7 @@ function App() {
         <Box sx={flexColumn}>
           { location.pathname === "/" ? ( <NavHome /> ) : ( <NavPage />) }
             <Routes>
-              <Route exact path="/" element={<Homepage />} />
+              <Route exact path="/" element={<Home />} />
               <Route exact path="/national-park-service-finder" element={<ParkPage />} />
               <Route exact path="/rehab-typing-test" element={<TypingPage />} />
               <Route exact path="/my-portfolio" element={<PortfolioPage />} />
@@ -42,7 +42,6 @@ function App() {
         </Box>
     </Fragment>
   );
-
 };
 
 export default App;

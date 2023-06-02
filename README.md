@@ -1,6 +1,7 @@
-# Tesla Homepage Clone
+# The Developer's Journey
 
-This is a paragraph explaining the project, what the project is about, and why I chose this project. (challenge myself with replicating a well-known brand's homepage)
+A front-end developer portfolio that’s made of ReactJS, Material UI, and "The Hero’s Journey," a storytelling structure by Joseph Campbell.
+
 
 ## Code Style
 

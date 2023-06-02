@@ -8,14 +8,14 @@ import SwipeableViews from 'react-swipeable-views';
 
 import { imageDot } from '../../theme/CustomTheme';
 
-import forest from '../../images/forest-transparent.png';
-import ParkHome from '../../images/project-images/national-park-service-finder/nps-finder-home.png';
-import ParkMarkers from '../../images/project-images/national-park-service-finder/nps-finder-markers.png';
-import ParkNewAddress from '../../images/project-images/national-park-service-finder/nps-finder-new-address.png';
-import Park from '../../images/project-images/national-park-service-finder/nps-finder-park.png';
-import ParkSearch from '../../images/project-images/national-park-service-finder/nps-finder-search.png';
-import ParkMobile from '../../images/project-images/national-park-service-finder/nps-finder-mobile.png';
-import ParkMobileTwo from '../../images/project-images/national-park-service-finder/nps-finder-mobile-two.png';
+import forest from '../../assets/images/forest-transparent.png';
+import ParkHome from '../../assets/images/project-images/national-park-service-finder/nps-finder-home.png';
+import ParkMarkers from '../../assets/images/project-images/national-park-service-finder/nps-finder-markers.png';
+import ParkNewAddress from '../../assets/images/project-images/national-park-service-finder/nps-finder-new-address.png';
+import Park from '../../assets/images/project-images/national-park-service-finder/nps-finder-park.png';
+import ParkSearch from '../../assets/images/project-images/national-park-service-finder/nps-finder-search.png';
+import ParkMobile from '../../assets/images/project-images/national-park-service-finder/nps-finder-mobile.png';
+import ParkMobileTwo from '../../assets/images/project-images/national-park-service-finder/nps-finder-mobile-two.png';
 
 
 document.onload = () => {
@@ -91,10 +91,10 @@ const ProjectPaper = styled(Paper) `
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #56903A;
+  background-color: #FFF;
   height: 40px;
   width: 100px;
-  color: #FFF;
+  color: #56903A;
   font-size: 13px;
   font-weight: bold;
   border-radius: 10px;
@@ -107,7 +107,7 @@ const CodePaper = styled(Paper) `
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #C56C39;
+  background-color: #56903A;
   height: 40px;
   width: 100px;
   color: #fff;
@@ -139,17 +139,15 @@ const CodeLink = styled(Link) `
 
 `;
 
-const ChallengeImage = styled(Box) `
-  height: 200px;
-  width: 150px;
-  object-fit: cover;
-  overflow: hidden;
-  transition: transform 1s ease-in-out;
-  border-radius: 10px;
+const ParkSpan = styled(Box) `
 
-  &:hover {
-    transform: scale(1.1);
-  }
+  display: inline;
+  background-color: rgba(86, 144, 58, 0.75);
+  font-weight: 500;
+  color: #fff;
+  border-radius: 5px;
+  padding: 2px 5px;
+
 `;
 
 const ParkPage = () => {
@@ -159,7 +157,7 @@ const ParkPage = () => {
       <Box sx={{ position: "relative", backgroundColor: theme => theme.palette.primary.main, overflow: "hidden", py: 10 }}>
 
         <ForestBackground></ForestBackground>
-        <Stack sx={{ position: "relative", textAlign: "center", px: 3 }} direction="column" justifyContent="center" alignItems="center">
+        <Stack sx={{ position: "relative", textAlign: "center", px: { xs: 2, md: 7 } }} direction="column" justifyContent="center" alignItems="center">
 
           <ParkImageSwipe />
 
@@ -184,14 +182,16 @@ const ParkPage = () => {
               </Paper>
             </Stack>
 
-            <Stack sx={{ px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="center">
-              <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
+            <Stack sx={{ width: "100%", px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
+              <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
-                <Typography fontWeight={300} variant="subtitle2">This is the first sentence about the project.  This is the second sentence about the project.  This is the third sentence about the project.</Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">When I decided to create the park finder application, I made the decision based on a singular, self-reflecting question: what kind of application would I want to use?&nbsp; Or, what kind of application could I use in the near future?&nbsp; This led me to think about some of the trips I’d been on over the past five years.&nbsp; Alongside friends or family, or both, I would often schedule some time to visit the national parks throughout the US.&nbsp; I’d visited YellowStone, Yosemite, Zion, Acadia, Rocky, and Glacier already; and I knew I was far from finished with hanging up the ol' hiking boots.&nbsp; My annual retreat into the great outdoors had become somewhat of a tradition.&nbsp; So I thought why not build an application that’ll find me the next trip?&nbsp; Therefore the park finder provides historic sites and national parks around a user’s location and around a user’s park search.
+                </Typography>
               </Stack>
-              <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
-                <Typography color="#fff" fontWeight={500} variant="h5">Project Features / Tech</Typography>
-                <Typography fontWeight={300} variant="subtitle2">This is the first sentence about the project.  This is the second sentence about the project.  This is the third sentence about the project.</Typography>
+              <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
+                <Typography color="#fff" fontWeight={500} variant="h5">The Road</Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">As Google Maps and Apple Maps were the inspiration for the application’s UI, I knew I wanted my map to be structured somewhat similarly.&nbsp; The header content would be the side features.&nbsp; The main content would be the map itself, and the footer content would be the search input and finder button.&nbsp; I used node package <ParkSpan>@react-google-maps/api</ParkSpan> to load the <ParkSpan>Google Maps API.</ParkSpan>&nbsp; The <ParkSpan>Geolocation API</ParkSpan> gave me the coordinates to start the map at the user’s current location.&nbsp; Then the <ParkSpan>National Park Service API</ParkSpan> gave me the park data for the search and finder functionality. </Typography>
+                <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">Instead of <ParkSpan>prop-drilling</ParkSpan> with local state throughout the entire application, I had the <ParkSpan>Context API</ParkSpan> manage the state globally.&nbsp; The <ParkSpan>useReducer</ParkSpan> hook handled the state transitions via the dispatch of the reducer actions, while <ParkSpan>custom hooks</ParkSpan> allowed me to reuse state logic across multiple components and eliminate code clutter as well.</Typography>
               </Stack>
             </Stack>
 
@@ -201,14 +201,23 @@ const ParkPage = () => {
             </Stack>
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-              <Stack sx={{ width: "100%", py: 4, px: 5 }} direction={{ xs: "column", md: "row" }} alignItems="center" justifyContent="center" spacing={5}>
-                <Stack sx={{ width: { xs: "100%", md: "60%"}, textAlign: "center" }} direction="column" spacing={2}>
-                  <Typography color="#fff" fontWeight="bold" variant="h6" sx={{ mb: 1 }}>Project Challenges</Typography>
-                  <Typography color="#fff" fontWeight={300} variant="subtitle2" sx={{ mb: 1 }}>This is the first sentence about the project.  This is the second sentence about the project.</Typography>
+              <Stack sx={{ width: "100%", py: 4, px: 5 }} direction={{ xs: "column", md: "row" }} alignItems="flex-start" justifyContent="center" spacing={5}>
+                <Stack sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }} direction="column" spacing={2}>
+                  <Typography color="#fff" fontWeight={500} variant="h5">The Challenge: <ParkSpan>useMapMarkers</ParkSpan></Typography>
+                  <Typography color="#fff" fontSize={15} fontWeight={300} sx={{ lineHeight: 1.75 }} variant="subtitle2">For displaying the nearest parks around the user, I knew I had to somehow create a radius around the user’s coordinates and around the user’s search request.&nbsp; To do this I needed four items: the coordinates of the user’s location, the coordinates of the user’s searched park, the conditional to create the radius, and the state to store the searched parks within the radius.&nbsp; I decided to store this logic within the custom hook <ParkSpan>useMapMarkers.</ParkSpan>
+                  </Typography>
+                  <Typography color="#fff" fontSize={15} fontWeight={300} sx={{ lineHeight: 1.75 }} variant="subtitle2">
+                  The user’s coordinates were retrieved from the <ParkSpan>Geolocation API</ParkSpan> of another custom hook, while the searched park’s coordinates were retrieved from the <ParkSpan>searchCoords</ParkSpan> state of the <ParkSpan>Context API.</ParkSpan>&nbsp; Afterward I set two conditionals to be within a three-coordinate radius when searching for the nearest parks: one <ParkSpan>if-statement</ParkSpan> for a search around the user’s coordinates, another <ParkSpan>if-statement</ParkSpan> for a search around the searched park’s coordinates.&nbsp; Both conditionals were wrapped within a <ParkSpan>useEffect</ParkSpan> hook that took a dependency, the returned park data from the NPS API, which controls when the hook runs or not.&nbsp; Lastly, after the conditionals, the three-coordinate radius of park data updated the <ParkSpan>marker</ParkSpan> state via the <ParkSpan>setMarker</ParkSpan> reducer function.
+                  </Typography>
                 </Stack>
-                <Box sx={{ width: { xs: "100%", md: "40%"} }}>
-                  <ChallengeImage component="img" src="https://source.unsplash.com/random/2" />
-                </Box>
+                <Stack sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }} direction="column" spacing={2}>
+                  <Typography color="#fff" fontWeight={500} variant="h5">The Challenge: <ParkSpan>useSearchDebounce</ParkSpan></Typography>
+                  <Typography color="#fff" fontSize={15} fontWeight={300} sx={{ lineHeight: 1.75 }} variant="subtitle2">I didn’t know about <ParkSpan>debounce</ParkSpan> after I created the search component to retrieve the park data based on the user’s typing.&nbsp; Nor did I understand why the API requests were fighting me for every typed character.&nbsp; But after reading about performance issues and how expensive multiple API requests can be, I knew I had to find a solution for this rather “annoying,” interface problem.&nbsp; Then came the <ParkSpan>debounce</ParkSpan> function: to simplify, it's the delay of an API request until a user stops typing after a given time.
+                  </Typography>
+                  <Typography color="#fff" fontSize={15} fontWeight={300} sx={{ lineHeight: 1.75 }} variant="subtitle2">
+                  To begin I decided to store the function inside of a custom hook, <ParkSpan>useSearchDebounce,</ParkSpan> then imported <ParkSpan>useState</ParkSpan> and <ParkSpan>useEffect</ParkSpan> hooks from there.&nbsp; The function would consist of the <ParkSpan>setTimeout</ParkSpan> and <ParkSpan>clearTimeout</ParkSpan> methods to control the countdown until the request to the API.&nbsp; The <ParkSpan>useEffect</ParkSpan> hook would run the <ParkSpan>debounce</ParkSpan> when the component mounts and clear the function afterward.&nbsp; The <ParkSpan>useState</ParkSpan> hook would store and return the searched text after the delayed time from <ParkSpan>setTimeout.</ParkSpan>&nbsp; After importing the <ParkSpan>useSearchDebounce</ParkSpan> hook inside of the search component, and after inserting the user’s text and delayed time as arguments for the custom hook, I then loaded the <ParkSpan>debounce</ParkSpan> value to make the request to the API.
+                  </Typography>
+                </Stack>
               </Stack>
             </Paper>
 
