@@ -9,13 +9,13 @@ import SwipeableViews from 'react-swipeable-views';
 import { imageDot } from '../../theme/CustomTheme';
 
 import forest from '../../assets/images/forest-transparent.png';
-import ParkHome from '../../assets/images/project-images/national-park-service-finder/nps-finder-home.png';
-import ParkMarkers from '../../assets/images/project-images/national-park-service-finder/nps-finder-markers.png';
-import ParkNewAddress from '../../assets/images/project-images/national-park-service-finder/nps-finder-new-address.png';
-import Park from '../../assets/images/project-images/national-park-service-finder/nps-finder-park.png';
-import ParkSearch from '../../assets/images/project-images/national-park-service-finder/nps-finder-search.png';
-import ParkMobile from '../../assets/images/project-images/national-park-service-finder/nps-finder-mobile.png';
-import ParkMobileTwo from '../../assets/images/project-images/national-park-service-finder/nps-finder-mobile-two.png';
+import ParkHome from '../../assets/images/project-images/nps-finder/nps-finder-home.png';
+import ParkMarkers from '../../assets/images/project-images/nps-finder/nps-finder-markers.png';
+import ParkNewAddress from '../../assets/images/project-images/nps-finder/nps-finder-new-address.png';
+import Park from '../../assets/images/project-images/nps-finder/nps-finder-park.png';
+import ParkSearch from '../../assets/images/project-images/nps-finder/nps-finder-search.png';
+import ParkMobile from '../../assets/images/project-images/nps-finder/nps-finder-mobile.png';
+import ParkMobileTwo from '../../assets/images/project-images/nps-finder/nps-finder-mobile-two.png';
 
 
 document.onload = () => {

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { flexCenter } from '../../theme/CustomTheme';
 
 import TeslaLogo from '../../assets/images/project-images/tesla-clone/tesla-logo.png';
-import ParkLogo from '../../assets/images/project-images/national-park-service-finder/national-park-logo.png';
+import ParkLogo from '../../assets/images/project-images/nps-finder/national-park-logo.png';
 import RehabLogo from '../../assets/images/project-images/rehab-typing-test/rehab-therapy-logo.png';
 import PortfolioLogo from '../../assets/images/project-images/portfolio-site/portfolio-logo.png';
 
@@ -16,12 +16,12 @@ const projects = [
     border: "1.5px solid #2F7ABF"
   }},
 
-  { id: 2, title: "NPS Finder", description: "An application for hikers and outdoor enthusiasts.  This program uses the National Park Service API & Google Maps API to find national parks and historic sites around the user’s location.", image: ParkLogo, url: "/national-park-service-finder", style: {
+  { id: 2, title: "NPS Finder", description: "An application for hikers and outdoor enthusiasts.  This program uses the National Park Service API & Google Maps API to find national parks and historic sites around a user’s location.", image: ParkLogo, url: "/national-park-service-finder", style: {
     color: "#56903A",
     border: "1.5px solid #56903A"
   }},
 
-  { id: 3, title: "My Portfolio", description: "A front-end developer portfolio that’s made of ReactJS, Material UI, and \"The Hero’s Journey,\" a storytelling structure by Joseph Campbell.", image: PortfolioLogo, url: "/my-portfolio", style: {
+  { id: 3, title: "My Portfolio", description: "A front-end developer portfolio that’s made of ReactJS, MUI Core, and \"The Hero’s Journey,\" a storytelling structure by Joseph Campbell.", image: PortfolioLogo, url: "/my-portfolio", style: {
     color: "#FFF",
     border: "1.5px solid #FFF"
   }},

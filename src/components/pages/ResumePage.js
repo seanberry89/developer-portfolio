@@ -3,7 +3,7 @@ import { Box, Link, List, ListItemText, Paper, Stack, styled, Typography, useMed
 import { Document, Page, pdfjs } from 'react-pdf';
 import { flexCenter } from '../../theme/CustomTheme';
 
-import myResume from '../../assets/pdf/Resume-AccountManagement.pdf';
+import myResume from '../../assets/pdf/Resume-FrontendDeveloper.pdf';
 import sierraClub from '../../assets/images/sierra-club-logo.png';
 import forest from '../../assets/images/forest-transparent.png';
 
