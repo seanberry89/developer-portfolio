@@ -28,9 +28,7 @@ const StyledBox = styled(Box) `
   border-bottom: 3px solid red;
   width: 190px;
   color: red;
-  transform: translate(-135px, -20px);
 `;
-
 
 const ResumeLink = styled(Link) `
   font-size: 12px;
@@ -54,70 +52,17 @@ const ResumeLink = styled(Link) `
 `;
 
 
-// const LeftImage = styled(LazyLoadImage) `
-
-//   width: 125px;
-//   height: 150px;
-//   object-fit: cover;
-//   transform: rotate(-8deg) translateY(10px);
-//   border-radius: 30px;
-//   z-index: 0;
-//   transition: transform 1.5s ease-in-out;
-
-//   &:hover {
-//     z-index: 2;
-//     transform: rotate(-8deg) translateY(10px) translateX(-30px);
-//   };
-
-// `;
-
-
-// const MiddleImage = styled(LazyLoadImage) `
-
-//   width: 125px;
-//   height: 150px;
-//   object-fit: cover;
-//   border-radius: 30px;
-//   z-index: 1;
-//   transform: translateY(0px);
-//   transition: transform 1.5s ease-in-out;
-
-//   &:hover {
-//     transform: translateY(30px);
-//   };
-
-// `;
-
-
-// const RightImage = styled(LazyLoadImage) `
-
-//   width: 125px;
-//   height: 150px;
-//   object-fit: cover;
-//   transform: rotate(8deg) translateY(10px);
-//   border-radius: 30px;
-//   z-index: 0;
-//   transition: transform 1.5s ease-in-out;
-
-//   &:hover {
-//     z-index: 2;
-//     transform: rotate(8deg) translateY(10px) translateX(30px);
-//   };
-
-// `;
-
-
 const AboutSection = () => {
   return (
     <Box sx={{ position: "relative", backgroundColor: theme => theme.palette.secondary.main, py: 5 }}>
       <Stack sx={{ px: 3, height: "100%", textAlign: "center" }} direction={{ xs: "column", md: "row" }} justifyContent="space-around" alignItems="center">
         <Stack sx={{ py: 3, width: { xs: "100%", md: "50%"}, textAlign: "center"}} justifyContent="center" alignItems="center" direction="column" spacing={3}>
           <Box sx={{ position: "relative" }}>
-            <Typography sx={{ position: "absolute", top: -45, left: 55, zIndex: 3, fontFamily: "Holland", transform: "rotate(-10deg)" }} color="red" variant="h4">Hero's</Typography>
-            <Typography variant="h4">The <StyledBox></StyledBox>Developer's Journey</Typography>
+            <Typography sx={{ position: "absolute", top: -45, left: { xs: 100, md: 55 }, zIndex: 3, fontFamily: "Holland", transform: "rotate(-10deg)" }} color="red" variant="h4">Hero's</Typography>
+            <Typography variant="h4">The <StyledBox sx={{ transform: { xs: "translate(-45px, -20px)", md: "translate(-135px, -20px)" } }}></StyledBox>Developer's Journey</Typography>
           </Box>
-          <Typography sx={{ lineHeight: 1.5, px: 5 }} fontWeight={300} variant="body1">The developer’s journey — of answering the call to the next project and adventure, overcoming challenges, learning from mistakes, and progressing all the while — can be the same as the storytelling structure of <span style={{ color: "red", fontFamily: "Holland", fontSize: "22px" }}>The Hero’s Journey.</span>&nbsp; Or, this is what I tell myself.&nbsp; For I am a self-taught front-end developer who knows much about solving problems while sailing through the waters of the uncomfortable and the unknown.</Typography>
-          <Typography sx={{ lineHeight: 1.5, px: 5 }} fontWeight={300} variant="body1">Where does the journey lead?&nbsp; What am I after?&nbsp; I want to integrate creativity and code to create exciting front-end applications.&nbsp; After hours, when I am not crunching code, the journey continues: I can be found exploring the trails of a new hike or writing some fiction at a nearby coffeehouse.</Typography>
+          <Typography sx={{ lineHeight: 1.5, px: { xs: 2, md: 5 } }} fontWeight={300} variant="body1">The developer’s journey — of answering the call to the next project and adventure, overcoming challenges, learning from mistakes, and progressing all the while — can be the same as the storytelling structure of <span style={{ color: "red", fontFamily: "Holland", fontSize: "22px" }}>The Hero’s Journey.</span>&nbsp; Or, this is what I tell myself.&nbsp; For I am a self-taught front-end developer who knows much about solving problems while sailing through the waters of the uncomfortable and the unknown.</Typography>
+          <Typography sx={{ lineHeight: 1.5, px: { xs: 2, md: 5 } }} fontWeight={300} variant="body1">Where does the journey lead?&nbsp; What am I after?&nbsp; I want to integrate creativity and code to create exciting front-end applications.&nbsp; After hours, when I am not crunching code, the journey continues: I can be found exploring the trails of a new hike or writing some fiction at a nearby coffeehouse.</Typography>
           <ResumeLink to="/resume">Resume</ResumeLink>
           <AboutPictures />
         </Stack>

@@ -86,11 +86,11 @@ const StyledBox = styled(Box) `
 
 const ProjectSection = () => {
   return (
-    <Box sx={{ py: { xs: 5, md: 8 }, px: 5, backgroundColor: theme => theme.palette.primary.main }}>
+    <Box sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, md: 5 }, backgroundColor: theme => theme.palette.primary.main }}>
       <Stack sx={{ position: "relative", textAlign: "center" }} direction="column" alignItems="center" justifyContent="center">
         <Typography sx={{ position: "relative", mb: 1 }} variant="h4">The Road of <StyledBox></StyledBox>Projects</Typography>
         <Typography sx={{ position: "absolute", top: 20, zIndex: 3, fontFamily: "Holland", transform: "rotate(-5deg)" }} color="red" variant="h4">of Trials</Typography>
-        <Typography sx={{ pt: 5, px: { xs: 5, md: 15 } }} fontWeight={300} variant="body1">All developers need to prove themselves before stepping outward into the unknown.&nbsp; Below are some examples of the tests and triumphs I had to face as a traveler on the <span style={{ color: "red", fontFamily: "Holland", fontSize: "22px" }}>Road of Trials:</span></Typography>
+        <Typography sx={{ pt: 5, px: { xs: 2, md: 15 } }} fontWeight={300} variant="body1">All developers need to prove themselves before stepping outward into the unknown.&nbsp; Below are some examples of the tests and triumphs I had to face as a traveler on the <span style={{ color: "red", fontFamily: "Holland", fontSize: "22px" }}>Road of Trials:</span></Typography>
         <Box sx={{ ...flexCenter, pt: 1 }}>
           <Grid rowSpacing={3} columnSpacing={3} container>
             {projects.map(project => {

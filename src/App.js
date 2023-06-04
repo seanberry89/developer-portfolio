@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import { Box, CssBaseline } from '@mui/material';
 import { flexColumn } from './theme/CustomTheme';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import "./index.css";
+import "./assets/fonts/Holland.ttf";
 
 import NavHome from './components/header/NavHome';
 import NavPage from './components/header/NavPage';

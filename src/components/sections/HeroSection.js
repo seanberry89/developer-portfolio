@@ -45,7 +45,7 @@ const HeroSection = () => {
       <ForestBackground></ForestBackground>
       <Box sx={{ position: "absolute", margin: "auto", height: "60%", zIndex: 2 }}>
         <Stack justifyContent="center" alignItems="center" spacing={2}>
-          <Typography sx={{ fontFamily: "Montserrat", fontWeight: 500 }} variant="h2">Sean Berry</Typography>
+          <Typography fontFamily="Montserrat" fontSize={{ xs: "50px", md: "60px" }} fontWeight={500}>Sean Berry</Typography>
           <Stack direction="row" divider={<Divider color="#fff" orientation="vertical" flexItem />} >
             <Typography variant="subtitle2">developer</Typography>
             <Typography variant="subtitle2">explorer</Typography>

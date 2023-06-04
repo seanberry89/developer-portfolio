@@ -5,6 +5,7 @@ import MobileStepper from '@mui/material/MobileStepper';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
+import NetlifyButton from '../../features/NetlifyButton';
 
 import { imageDot } from '../../theme/CustomTheme';
 
@@ -115,6 +116,7 @@ const ProjectLink = styled(Link) `
 
   text-decoration: none;
   transition: transform 0.75s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.2);
@@ -173,24 +175,24 @@ const TypingPage = () => {
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
 
-            <Stack direction="column" justifyContent="center" alignItems="center" spacing={3}>
-              <Typography variant="h3">Rehab Typing Test</Typography>
-              <Paper sx={{ width: "240px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-                <Stack direction="row" alignItems="center" justifyContent="center">
-                  <Typography color="#F0DB4F" variant="subtitle2">JavaScript</Typography>
-                  <Typography color="#61DBFB" variant="subtitle2">React</Typography>
-                  <Typography color="#1E88E5" variant="subtitle2">MUI Core</Typography>
-                </Stack>
-              </Paper>
-              <Paper sx={{ width: "240px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-                <Stack direction="row" alignItems="center" justifyContent="center">
-                  <Typography color="#FFF" variant="subtitle2">React Router API</Typography>
-                  <Typography color="#61DBFB" variant="subtitle2">Context API</Typography>
-                </Stack>
-              </Paper>
-            </Stack>
+            <Typography variant="h3">Rehab Typing Test</Typography>
 
-            <Stack sx={{ width: "100%", px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
+            <Paper sx={{ width: { xs: "220px", md: "240px" }, backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+              <Stack direction="row" alignItems="center" justifyContent="center">
+                <Typography color="#F0DB4F" fontSize={{ xs: 12, md: 14 }}>JavaScript</Typography>
+                <Typography color="#61DBFB" fontSize={{ xs: 12, md: 14 }}>React</Typography>
+                <Typography color="#1E88E5" fontSize={{ xs: 12, md: 14 }}>MUI Core</Typography>
+              </Stack>
+            </Paper>
+
+            <Paper sx={{ width: { xs: "220px", md: "240px" }, backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+              <Stack direction="row" alignItems="center" justifyContent="center">
+                <Typography color="#FFF" fontSize={{ xs: 12, md: 14 }}>React Router API</Typography>
+                <Typography color="#61DBFB" fontSize={{ xs: 12, md: 14 }}>Context API</Typography>
+              </Stack>
+            </Paper>
+
+            <Stack sx={{ position: "relative", width: "100%", px: { xs: 0, md: 5 } }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
               <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
                 <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">To return the patient to their preferred activities of daily living is the objective of occupational therapy.&nbsp; It’s this return that introduces the rehab typing test application.&nbsp; The decision to create the typing test wasn’t a choice I made, but its functionality was inspired by the loved ones around me.&nbsp; My father, now retired from backend development, was recovering from esophageal surgery and undergoing clinical therapy while I was building this portfolio.&nbsp; Then my girlfriend, an occupational therapist, would often share stories about how she lacked the resources she wished she had for her patients.&nbsp; So when I asked her what kind of tools could be useful for an OT, she then gave me the idea about a typing test that would inform the patient about their missed keys when typing; to which I replied, “I think I can build that.”&nbsp; Therefore the rehab typing test provides words-per-minute and typing accuracy, but also gives the user a breakdown of their most missed keys as well.
@@ -205,11 +207,11 @@ const TypingPage = () => {
 
             <Stack justifyContent="center" alignItems="center" direction="row" spacing={5}>
               <CodeLink href="https://github.com/seanberry89/nps-finder" rel="noopener" target="_blank"><CodePaper elevation={6}>Source Code</CodePaper></CodeLink>
-              <ProjectLink to="/teslapage" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
+              <ProjectLink href="https://rehabtypingtest.com" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
             </Stack>
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-              <Stack sx={{ width: "100%", py: 4, px: 5 }} direction={{ xs: "column", md: "row" }} alignItems="flex-start" justifyContent="center" spacing={5}>
+              <Stack sx={{ width: "100%", py: 4, px: { xs: 2, md: 5 } }} direction={{ xs: "column", md: "row" }} alignItems="flex-start" justifyContent="center" spacing={5}>
                 <Stack sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }} direction="column" spacing={2}>
                   <Typography color="#fff" fontWeight={500} variant="h5">The Challenge: <TypingSpan>Stale State</TypingSpan></Typography>
                   <Typography color="#fff" fontSize={15} fontWeight={300} sx={{ lineHeight: 1.75 }} variant="subtitle2">An unsuspecting issue I had to resolve when differentiating the test’s time was the <TypingSpan>stale state.</TypingSpan>&nbsp; I didn’t understand why the timer’s state would (sometimes) ignore the user’s selection and return to the previous value or even the default value.&nbsp; First I had thought the issue was because of the <TypingSpan>React Router API</TypingSpan> for the update occurred when navigating from the select page to the test page.&nbsp; But after reviewing further, I came to realize the state didn’t reflect the update because of the <TypingSpan>stale closure</TypingSpan> from the link's event handler.
@@ -270,11 +272,11 @@ export const TypingImageSwipe = () => {
 
                 { activeStep > 5 ? (
 
-                  <MobileImage sx={{ width: { xs: "400px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <MobileImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) : (
 
-                  <PageImage sx={{ width: { xs: "400px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <PageImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) }
 

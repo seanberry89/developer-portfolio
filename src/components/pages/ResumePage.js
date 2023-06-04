@@ -97,7 +97,7 @@ const ResumePage = () => {
     const mobile = useMediaQuery('(max-width:600px)');
 
   return (
-    <Box sx={{ ...flexCenter, position: "relative", backgroundColor: theme => theme.palette.primary.main, py: 14, px: { xs: 5, md: 18 } }}>
+    <Box sx={{ ...flexCenter, position: "relative", backgroundColor: theme => theme.palette.primary.main, py: 14, px: { xs: 3, md: 18 } }}>
         <ForestBackground></ForestBackground>
         <Stack sx={{ width: "100%", zIndex: 1 }} justifyContent="center" alignItems="center" direction="column" spacing={5}>
           <StyledPaper elevation={10}>
@@ -108,7 +108,7 @@ const ResumePage = () => {
               <Box sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }}>
                 <Typography sx={{ fontWeight: 600 }} color="#fff" variant="h5">NYC Sierra Club</Typography>
                 <Typography color="#fff" variant="subtitle2">2020-2023</Typography>
-                <List sx={{ px: 5, textAlign: { xs: "center", md: "left" } }}>
+                <List sx={{ px: { xs: 2, md: 5 }, textAlign: { xs: "center", md: "left" } }}>
                     <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="volunteered as the sole web designer and developer for an environmental non-profit in NYC" />
                     <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="developed the structure, design, and optimization of front-end products for the client's website via WordPress" />
                     <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="managed backend updates and system maintenance to ensure consistent client-side perfomance" />
@@ -119,7 +119,7 @@ const ResumePage = () => {
           </StyledPaper>
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
             <Document file={myResume}>
-                { mobile ? (<Page width={450} pageNumber={1}/>) : (<Page pageNumber={1}/>) }
+                { mobile ? (<Page width={375} pageNumber={1}/>) : (<Page pageNumber={1}/>) }
             </Document>
             <ResumeLink href={myResume} target="_blank">Download Resume</ResumeLink>
           </Stack>

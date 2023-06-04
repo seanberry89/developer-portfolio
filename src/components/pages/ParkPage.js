@@ -121,6 +121,7 @@ const ProjectLink = styled(Link) `
 
   text-decoration: none;
   transition: transform 0.75s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.2);
@@ -163,24 +164,24 @@ const ParkPage = () => {
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
 
-            <Stack direction="column" justifyContent="center" alignItems="center" spacing={3}>
-              <Typography variant="h3">National Park Service (NPS) Finder</Typography>
-              <Paper sx={{ width: "425px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-                <Stack direction="row" alignItems="center" justifyContent="center">
-                  <Typography color="#F0DB4F" variant="subtitle2">JavaScript</Typography>
-                  <Typography color="#61DBFB" variant="subtitle2">React</Typography>
-                  <Typography color="#1E88E5" variant="subtitle2">MUI Core</Typography>
-                  <Typography color="#C56C39" variant="subtitle2">National Park Service API</Typography>
-                </Stack>
-              </Paper>
-              <Paper sx={{ width: "375px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-                <Stack direction="row" alignItems="center" justifyContent="center">
-                  <Typography color="#EA4335" variant="subtitle2">Google Maps API</Typography>
-                  <Typography color="#FFF" variant="subtitle2">Geolocation API</Typography>
-                  <Typography color="#61DBFB" variant="subtitle2">Context API</Typography>
-                </Stack>
-              </Paper>
-            </Stack>
+            <Typography variant="h3">National Park Service (NPS) Finder</Typography>
+
+            <Paper sx={{ width: { xs: "375px", md: "425px" }, backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+              <Stack direction="row" alignItems="center" justifyContent="center">
+                <Typography color="#F0DB4F" fontSize={{ xs: 12, md: 14 }}>JavaScript</Typography>
+                <Typography color="#61DBFB" fontSize={{ xs: 12, md: 14 }}>React</Typography>
+                <Typography color="#1E88E5" fontSize={{ xs: 12, md: 14 }}>MUI Core</Typography>
+                <Typography color="#C56C39" fontSize={{ xs: 12, md: 14 }}>National Park Service API</Typography>
+              </Stack>
+            </Paper>
+            
+            <Paper sx={{ width: { xs: "325px", md: "375px" }, backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+              <Stack direction="row" alignItems="center" justifyContent="center">
+                <Typography color="#EA4335" fontSize={{ xs: 12, md: 14 }}>Google Maps API</Typography>
+                <Typography color="#FFF" fontSize={{ xs: 12, md: 14 }}>Geolocation API</Typography>
+                <Typography color="#61DBFB" fontSize={{ xs: 12, md: 14 }}>Context API</Typography>
+              </Stack>
+            </Paper>
 
             <Stack sx={{ width: "100%", px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
               <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
@@ -197,11 +198,11 @@ const ParkPage = () => {
 
             <Stack justifyContent="center" alignItems="center" direction="row" spacing={5}>
               <CodeLink href="https://github.com/seanberry89/nps-finder" rel="noopener" target="_blank"><CodePaper elevation={6}>Source Code</CodePaper></CodeLink>
-              <ProjectLink to="/teslapage" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
+              <ProjectLink href="https://nps-finder.com" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
             </Stack>
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-              <Stack sx={{ width: "100%", py: 4, px: 5 }} direction={{ xs: "column", md: "row" }} alignItems="flex-start" justifyContent="center" spacing={5}>
+              <Stack sx={{ width: "100%", py: 4, px: { xs: 2, md: 5 } }} direction={{ xs: "column", md: "row" }} alignItems="flex-start" justifyContent="center" spacing={5}>
                 <Stack sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }} direction="column" spacing={2}>
                   <Typography color="#fff" fontWeight={500} variant="h5">The Challenge: <ParkSpan>useMapMarkers</ParkSpan></Typography>
                   <Typography color="#fff" fontSize={15} fontWeight={300} sx={{ lineHeight: 1.75 }} variant="subtitle2">For displaying the nearest parks around the user, I knew I had to somehow create a radius around the user’s coordinates and around the user’s search request.&nbsp; To do this I needed four items: the coordinates of the user’s location, the coordinates of the user’s searched park, the conditional to create the radius, and the state to store the searched parks within the radius.&nbsp; I decided to store this logic within the custom hook <ParkSpan>useMapMarkers.</ParkSpan>
@@ -266,11 +267,11 @@ export const ParkImageSwipe = () => {
 
                 { activeStep > 4 ? (
 
-                  <MobileImage sx={{ width: { xs: "400px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <MobileImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) : (
 
-                  <PageImage sx={{ width: { xs: "400px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <PageImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) }
 

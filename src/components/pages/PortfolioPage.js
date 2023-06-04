@@ -117,6 +117,7 @@ const ProjectLink = styled(Link) `
 
   text-decoration: none;
   transition: transform 0.75s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.2);
@@ -174,18 +175,19 @@ const PortfolioPage = () => {
           <PortfolioImageSwipe />
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
+
             <Typography variant="h3">The Developer's Journey</Typography>
 
-            <Paper sx={{ width: "375px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+            <Paper sx={{ width: { xs: "325px", md: "375px" }, backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
               <Stack direction="row" alignItems="center" justifyContent="center">
-                <Typography color="#F0DB4F" variant="subtitle2">JavaScript</Typography>
-                <Typography color="#61DBFB" variant="subtitle2">React</Typography>
-                <Typography color="#1E88E5" variant="subtitle2">MUI Core</Typography>
-                <Typography color="#FFF" variant="subtitle2">React Router API</Typography>
+                <Typography color="#F0DB4F" fontSize={{ xs: 12, md: 14 }}>JavaScript</Typography>
+                <Typography color="#61DBFB" fontSize={{ xs: 12, md: 14 }}>React</Typography>
+                <Typography color="#1E88E5" fontSize={{ xs: 12, md: 14 }}>MUI Core</Typography>
+                <Typography color="#FFF" fontSize={{ xs: 12, md: 14 }}>React Router API</Typography>
               </Stack>
             </Paper>
 
-            <Stack sx={{ width: "100%", px: 5 }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
+            <Stack sx={{ width: "100%", px: { xs: 0, md: 5 } }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
               <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
                 <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">"To self-brand," which was the advice I was given when creating a developer portfolio, I knew I had to somehow bring interests, hobbies, and code together in a professional way.&nbsp; But how was I to do this?&nbsp; I knew I loved the outdoor lifestyle.&nbsp; I loved storytelling.&nbsp; I loved programming.&nbsp; But how was I to use the three to present myself in a developer’s portfolio?</Typography>
@@ -201,11 +203,11 @@ const PortfolioPage = () => {
 
             <Stack justifyContent="center" alignItems="center" direction="row" spacing={5}>
               <CodeLink href="https://github.com/seanberry89/the-developer-journey" rel="noopener" target="_blank"><CodePaper elevation={6}>Source Code</CodePaper></CodeLink>
-              <ProjectLink to="/teslapage" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
+              <ProjectLink href="https://thedevelopersjourney.com" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
             </Stack>
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-              <Stack sx={{ width: "100%", py: 4, px: 5 }} direction={{ xs: "column", md: "row" }} alignItems="flex-start" justifyContent="center" spacing={5}>
+              <Stack sx={{ width: "100%", py: 4, px: { xs: 2, md: 5 } }} direction={{ xs: "column", md: "row" }} alignItems="flex-start" justifyContent="center" spacing={5}>
                 <Stack sx={{ width: { xs: "100%", md: "50%"}, textAlign: "center" }} direction="column" spacing={2}>
                   <Typography color="#fff" fontWeight={500} variant="h5">The Challenege: <PortfolioSpan>MUI Core</PortfolioSpan></Typography>
                   <Typography color="#fff" fontSize={15} fontWeight={300} variant="subtitle2" sx={{ lineHeight: 1.75 }}>Before knowing MUI Core I would use external stylesheets or CDNs (from Boostrap) for various test projects.&nbsp; So when I decided to load <PortfolioSpan>MUI Core</PortfolioSpan> to the developer portfolio because of its uniform styling — outside of knowing the basics of the library already — I found myself confronted with some roadblocks.&nbsp; I wasn’t familiar with the API of a few block components, such as <PortfolioSpan>TextField,</PortfolioSpan> <PortfolioSpan>Stepper,</PortfolioSpan> <PortfolioSpan>Fade,</PortfolioSpan> and others; and I knew these were components I wanted to customize and structure inside the portfolio.&nbsp; Eventually, after scouring the MUI docs and StackOverflow, after trial and error, I was able to learn more about the components and, more importantly, <PortfolioSpan>MUI Core.</PortfolioSpan>
@@ -263,11 +265,11 @@ export const PortfolioImageSwipe = () => {
 
                 { activeStep > 3 ? (
 
-                  <MobileImage sx={{ width: { xs: "400px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <MobileImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) : (
 
-                  <PageImage sx={{ width: { xs: "400px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <PageImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) }
 

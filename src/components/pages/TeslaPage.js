@@ -106,6 +106,7 @@ const ProjectLink = styled(Link) `
 
   text-decoration: none;
   transition: transform 0.75s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.2);
@@ -147,17 +148,18 @@ const TeslaPage = () => {
           <TeslaImageSwipe />
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
+
             <Typography variant="h3">Tesla Clone</Typography>
 
-            <Paper sx={{ width: "200px", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
+            <Paper sx={{ width: { xs: "175px", md: "200px" }, backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
               <Stack direction="row" alignItems="center" justifyContent="center">
-                <Typography color="#F0DB4F" variant="subtitle2">JavaScript</Typography>
-                <Typography color="#264de4" variant="subtitle2">CSS</Typography>
-                <Typography color="#e34c26" variant="subtitle2">HTML</Typography>
+                <Typography color="#F0DB4F" fontSize={{ xs: 12, md: 14 }}>JavaScript</Typography>
+                <Typography color="#264de4" fontSize={{ xs: 12, md: 14 }}>CSS</Typography>
+                <Typography color="#e34c26" fontSize={{ xs: 12, md: 14 }}>HTML</Typography>
               </Stack>
             </Paper>
 
-            <Stack sx={{ px: 5, width: "100%" }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
+            <Stack sx={{ width: "100%", px: { xs: 0, md: 5 } }} direction={{ xs: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
               <Stack sx={{ width: { xs: "100%", md: "50%" }, textAlign: "center" }} direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Typography color="#fff" fontWeight={500} variant="h5">The Story</Typography>
                 <Typography sx={{ px: { xs: 0, md: 5 }, lineHeight: 1.75 }} fontSize={15} fontWeight={300} variant="subtitle2">For the first project I wanted to demonstrate the basic knowledge of a front-end developer: HTML, CSS, and JavaScript.&nbsp; To show this knowledge I decided to clone the homepage of a recognizable brand — so I chose Tesla.&nbsp; Why Tesla?&nbsp; I saw the UI to be straightforward and open (not busy), but also eye-catching when showcasing their product selection.&nbsp; The product images are unavoidable, and I like that.&nbsp; This application mirrors the face and functionality of the Tesla homepage.
@@ -172,11 +174,11 @@ const TeslaPage = () => {
 
             <Stack justifyContent="center" alignItems="center" direction="row" spacing={5}>
               <CodeLink href="https://github.com/seanberry89/tesla-clone" rel="noopener" target="_blank"><CodePaper elevation={6}>Source Code</CodePaper></CodeLink>
-              <ProjectLink to="/teslapage" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
+              <ProjectLink href="https://teslaclone.com" rel="noopener" target="_blank"><ProjectPaper elevation={6}>Live Project</ProjectPaper></ProjectLink>
             </Stack>
 
             <Paper sx={{ height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
-              <Stack sx={{ width: "100%", textAlign: "center", py: 4, px: 5 }} direction="column" alignItems="center" justifyContent="center">
+              <Stack sx={{ width: "100%", textAlign: "center", py: 4, px: { xs: 2, md: 5 } }} direction="column" alignItems="center" justifyContent="center">
                 <Typography color="#fff" fontWeight={500} variant="h5">The Challenge: <TeslaSpan>window.scrollY</TeslaSpan></Typography>
                 <Typography color="#fff" fontSize={15} fontWeight={300} variant="subtitle2" sx={{ lineHeight: 1.75 }}>A problem I had to overcome was the auto scroll and position lock between product sections in the Tesla homepage.&nbsp; From the developer portfolio I learned how to reposition the document based on the click of an event listener, but I was unfamiliar with the position lock of the document when the user released the scroll.&nbsp; To recreate this functionality, I had to learn the scroll offsets from the <TeslaSpan>window</TeslaSpan> object, or more specifically, the <TeslaSpan>scrollY</TeslaSpan> property.&nbsp; But the catch and the release of the user’s position within a given time was another question.&nbsp; After some time I learned to use the <TeslaSpan>setTimeout</TeslaSpan> and the <TeslaSpan>clearTimeout</TeslaSpan> functions as a means of scrolling the document to the nearest section after a pause.&nbsp; Each section was given its own conditional that checked the pixel count range, and lastly, everything was wrapped and ran inside a scroll event listener.</Typography>
               </Stack>
@@ -226,11 +228,11 @@ export const TeslaImageSwipe = () => {
 
                 { activeStep > 2 ? (
 
-                  <MobileImage sx={{ width: { xs: "400px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <MobileImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) : (
 
-                  <PageImage sx={{ width: { xs: "400px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <PageImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) }
 
