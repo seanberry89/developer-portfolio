@@ -111,7 +111,7 @@ const ResumePage = () => {
                 <List sx={{ px: { xs: 2, md: 5 }, textAlign: { xs: "center", md: "left" } }}>
                     <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="volunteered as the sole web designer and developer for an environmental non-profit in NYC" />
                     <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="developed the structure, design, and optimization of front-end products for the client's website via WordPress" />
-                    <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="managed backend updates and system maintenance to ensure consistent client-side perfomance" />
+                    <ListItemText primaryTypographyProps={{ fontSize: 14, fontWeight: 500, letterSpacing: 0, mb: 1 }} primary="managed backend updates and system maintenance to ensure consistent client-side performance" />
                 </List>
                 <SierraLink href="https://nyc.sierraclub.org" target="_blank" rel="noopener">NYC Sierra Club</SierraLink>
               </Box>
