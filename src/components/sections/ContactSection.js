@@ -96,9 +96,9 @@ const ContactSection = () => {
         </Stack>
         <Stack sx={{ width: { xs: "100%", md: "50%" }, zIndex: 1 }} justifyContent="center" alignItems="center" direction="column">
           <Paper sx={{ height: { xs: 520, md: 450 }, width: { xs: 450, md: 500 }, py: 2, borderRadius: 10, backgroundColor: "rgba(0, 0, 0, 0.6)" }} elevation={10}>
-            <Box sx={{ ...flexColumn, p: 1 }} component="form" name="contact" method="post" autoComplete="off">
+            <Box sx={{ ...flexColumn, p: 1 }} component="form" name="developer-contact" method="post" autoComplete="off">
 
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="developer-contact" />
 
               <Stack justifyContent="flex-start" alignItems="center" direction="row" spacing={2}>
 
