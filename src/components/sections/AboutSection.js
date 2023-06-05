@@ -58,8 +58,8 @@ const AboutSection = () => {
       <Stack sx={{ px: 3, height: "100%", textAlign: "center" }} direction={{ xs: "column", md: "row" }} justifyContent="space-around" alignItems="center">
         <Stack sx={{ py: 3, width: { xs: "100%", md: "50%"}, textAlign: "center"}} justifyContent="center" alignItems="center" direction="column" spacing={3}>
           <Box sx={{ position: "relative" }}>
-            <Typography sx={{ position: "absolute", top: -45, left: { xs: 100, md: 55 }, zIndex: 3, fontFamily: "Holland", transform: "rotate(-10deg)" }} color="red" variant="h4">Hero's</Typography>
-            <Typography variant="h4">The <StyledBox sx={{ transform: { xs: "translate(-45px, -20px)", md: "translate(-135px, -20px)" } }}></StyledBox>Developer's Journey</Typography>
+            <Typography sx={{ position: "absolute", top: -45, left: 55, zIndex: 3, fontFamily: "Holland", transform: "rotate(-10deg)" }} color="red" variant="h4">Hero's</Typography>
+            <Typography variant="h4">The <StyledBox sx={{ transform: "translate(-135px, -20px)" }}></StyledBox>Developer's Journey</Typography>
           </Box>
           <Typography sx={{ lineHeight: 1.5, px: { xs: 2, md: 5 } }} fontWeight={300} variant="body1">The developer’s journey — of answering the call to the next project and adventure, overcoming challenges, learning from mistakes, and progressing all the while — can be the same as the storytelling structure of <span style={{ color: "red", fontFamily: "Holland", fontSize: "22px" }}>The Hero’s Journey.</span>&nbsp; Or, this is what I tell myself.&nbsp; For I am a self-taught front-end developer who knows much about solving problems while sailing through the waters of the uncomfortable and the unknown.</Typography>
           <Typography sx={{ lineHeight: 1.5, px: { xs: 2, md: 5 } }} fontWeight={300} variant="body1">Where does the journey lead?&nbsp; What am I after?&nbsp; I want to integrate creativity and code to create exciting front-end applications.&nbsp; After hours, when I am not crunching code, the journey continues: I can be found exploring the trails of a new hike or writing some fiction at a nearby coffeehouse.</Typography>

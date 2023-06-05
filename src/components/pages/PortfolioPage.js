@@ -265,11 +265,11 @@ export const PortfolioImageSwipe = () => {
 
                 { activeStep > 3 ? (
 
-                  <MobileImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <MobileImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) : (
 
-                  <PageImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <PageImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) }
 

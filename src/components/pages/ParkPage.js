@@ -174,7 +174,7 @@ const ParkPage = () => {
                 <Typography color="#C56C39" fontSize={{ xs: 12, md: 14 }}>National Park Service API</Typography>
               </Stack>
             </Paper>
-            
+
             <Paper sx={{ width: { xs: "325px", md: "375px" }, backgroundColor: "rgba(0, 0, 0, 0.6)", borderRadius: 5 }} elevation={10}>
               <Stack direction="row" alignItems="center" justifyContent="center">
                 <Typography color="#EA4335" fontSize={{ xs: 12, md: 14 }}>Google Maps API</Typography>
@@ -267,11 +267,11 @@ export const ParkImageSwipe = () => {
 
                 { activeStep > 4 ? (
 
-                  <MobileImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <MobileImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) : (
 
-                  <PageImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <PageImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) }
 

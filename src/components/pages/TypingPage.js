@@ -5,7 +5,6 @@ import MobileStepper from '@mui/material/MobileStepper';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
-import NetlifyButton from '../../features/NetlifyButton';
 
 import { imageDot } from '../../theme/CustomTheme';
 
@@ -272,11 +271,11 @@ export const TypingImageSwipe = () => {
 
                 { activeStep > 5 ? (
 
-                  <MobileImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <MobileImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) : (
 
-                  <PageImage sx={{ width: { xs: "375px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+                  <PageImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
 
                 ) }
 
