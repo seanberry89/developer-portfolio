@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { DiCss3, DiJavascript } from 'react-icons/di';
 import { FaReact, FaGitAlt, FaWordpress } from 'react-icons/fa';
-import { SiMaterialui, SiNpm, SiGatsby, SiTypescript } from 'react-icons/si';
+import { SiMui, SiNpm, SiGatsby, SiTypescript } from 'react-icons/si';
 
 import AboutPictures from './AboutPictures';
 
@@ -15,7 +15,7 @@ const techs = [
   {id: 2, text: "CSS3", color: "#264de4", icon: <DiCss3 color="#264de4" size={30} /> },
   {id: 3, text: "JavaScript", color: "#F0DB4F", icon: <DiJavascript color="#F0DB4F" size={30} /> },
   {id: 4, text: "React", color: "#61DBFB", icon: <FaReact color="#61DBFB" size={30} /> },
-  {id: 5, text: "MUI Core", color: "#1E88E5", icon: <SiMaterialui color="#1E88E5" size={30} /> },
+  {id: 5, text: "MUI Core", color: "#1E88E5", icon: <SiMui color="#1E88E5" size={30} /> },
   {id: 6, text: "Git", color: "#F1502F", icon: <FaGitAlt color="#F1502F" size={30} /> },
   {id: 7, text: "NPM", color: "#CC3534", icon: <SiNpm color="#CC3534" size={30} /> },
   {id: 8, text: "WordPress", color: "#21759b", icon: <FaWordpress color="#21759b" size={30} /> }
