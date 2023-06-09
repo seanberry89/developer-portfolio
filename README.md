@@ -23,5 +23,3 @@ A front-end developer portfolio that’s made of ReactJS, MUI Core, and "The Her
 ![Contact](/src/assets/images/project-images/portfolio-site/portfolio-contact.png)
 
 [### Live Demo](https://thedevelopersjourney.com)
-
-
