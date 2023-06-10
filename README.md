@@ -12,7 +12,7 @@ A front-end developer portfolio that’s made of ReactJS, MUI Core, and "The Her
 * MUI Core
 * React Router API
 
-### Instructions
+### Traverse the UI
 
 ![Home](/src/assets/images/project-images/portfolio-site/portfolio-header.png)
 
@@ -22,4 +22,4 @@ A front-end developer portfolio that’s made of ReactJS, MUI Core, and "The Her
 
 ![Contact](/src/assets/images/project-images/portfolio-site/portfolio-contact.png)
 
-[### Live Demo](https://thedevelopersjourney.com)
+[Live Demo](https://thedevelopersjourney.com)
