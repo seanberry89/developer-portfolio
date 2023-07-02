@@ -4,8 +4,10 @@
 
 @font-face {
   font-family: "Holland";
-  src: url("./assets/fonts/Holland.ttf") format("truetype");
+  src: url("assets/fonts/Holland.ttf") format("truetype");
 }
+
+/* "./assets/fonts/Holland.ttf" */
 
 html, body {
   margin: 0;
