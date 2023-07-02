@@ -23,11 +23,13 @@
 .swiper-button-prev {
   padding-left: 50px;
   color: #FFF;
+  text-rendering: auto;
 }
 
 .swiper-button-next {
   padding-right: 50px;
   color: #FFF;
+  text-rendering: auto;
 }
 
 .swiper-pagination {
