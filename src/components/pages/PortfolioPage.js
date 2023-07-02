@@ -1,12 +1,10 @@
-import React, { Fragment, useState } from 'react';
-import { Box, Button, Link, Paper, Stack, styled, Typography } from '@mui/material';
+import React, { Fragment } from 'react';
+import { Box, Link, Paper, Stack, styled, Typography, useMediaQuery } from '@mui/material';
 
-import MobileStepper from '@mui/material/MobileStepper';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-
-import { imageDot } from '../../theme/CustomTheme';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
+import '../../assets/style/Swiper.css';
 
 import forest from '../../assets/images/forest-transparent.png';
 import PortfolioHeader from '../../assets/images/project-images/portfolio-site/portfolio-header.png';
@@ -22,36 +20,6 @@ document.onload = () => {
 }
 
 
-const images = [
-
-  {
-    id: 1,
-    url: PortfolioHeader
-  },
-  {
-    id: 2,
-    url: PortfolioAbout
-  },
-  {
-    id: 3,
-    url: PortfolioProjects
-  },
-  {
-    id: 4,
-    url: PortfolioContact
-  },
-  {
-    id: 5,
-    url: PortfolioMobile
-  },
-  {
-    id: 6,
-    url: PortfolioMobileTwo
-  }
-
-];
-
-
 const ForestBackground = styled(Box) `
   background-image: url(${forest}), url(${forest});
   background-size: 750px, 750px;
@@ -61,24 +29,6 @@ const ForestBackground = styled(Box) `
   width: 100%;
   height: 100%;
   z-index: 0;
-`;
-
-const PageImage = styled(Box) `
-  display: block;
-  height: 400px;
-  border: 3px solid #fff;
-  border-radius: 5px;
-  object-fit: cover;
-  opacity: 0.8;
-`;
-
-const MobileImage = styled(Box) `
-  display: block;
-  height: 400px;
-  border: 3px solid #fff;
-  border-radius: 5px;
-  object-fit: contain;
-  opacity: 0.8;
 `;
 
 const ProjectPaper = styled(Paper) `
@@ -172,7 +122,7 @@ const PortfolioPage = () => {
         <ForestBackground></ForestBackground>
         <Stack sx={{ position: "relative", textAlign: "center", px: { xs: 2, md: 7 } }} direction="column" justifyContent="center" alignItems="center">
 
-          <PortfolioImageSwipe />
+          <PortfolioSwiper />
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
 
@@ -229,68 +179,78 @@ const PortfolioPage = () => {
 export default PortfolioPage;
 
 
-// Note: SwipeableViews causes a dev-mode only warning; alternative is to remove Strict Mode
-export const PortfolioImageSwipe = () => {
+export const PortfolioSwiper = () => {
 
-  const [activeStep, setActiveStep] = useState(0);
-
-  const maxSteps = images.length;
-
-  const handleNext = () => {
-    setActiveStep( (prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep( (prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
-
+  const mobile = useMediaQuery('(max-width:800px)');
 
   return (
 
     <Fragment>
 
-      <Stack justifyContent="center" alignItems="center">
+      { !mobile ? (
 
-      { images.length && (
+        <Swiper style={{ width: "740px", height: "385px", border: "3px solid #FFF" }} modules={[ Navigation, Pagination ]} centeredSlides="true" slidesPerView="auto" spaceBetween={10} navigation pagination={{ clickable: true }} loop={true}>
 
-        <SwipeableViews axis={"x"} index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
+          <SwiperSlide>
+            <img src={PortfolioHeader} alt="" />
+          </SwiperSlide>
 
-          { images.map((step) => (
+          <SwiperSlide>
+            <img src={PortfolioAbout} alt="" />
+          </SwiperSlide>
 
-              <Stack direction="column" justifyContent="center" alignItems="center" key={step.id}>
+          <SwiperSlide>
+            <img src={PortfolioProjects} alt="" />
+          </SwiperSlide>
 
-                { activeStep > 3 ? (
+          <SwiperSlide>
+            <img src={PortfolioContact} alt="" />
+          </SwiperSlide>
 
-                  <MobileImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+          <SwiperSlide>
+            <img src={PortfolioMobile} alt="" />
+          </SwiperSlide>
 
-                ) : (
+          <SwiperSlide>
+            <img src={PortfolioMobileTwo} alt="" />
+          </SwiperSlide>
 
-                  <PageImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+        </Swiper>
 
-                ) }
+      ) : (
 
-                <Box sx={{ position: "fixed", bottom: 45, width: { xs: "400px", md: "800px" }, px: { xs: 7, md: 5 }}}>
-                  <MobileStepper sx={{ backgroundColor: "transparent" }} variant="dots" position="static" steps={maxSteps} activeStep={activeStep} nextButton={<Button size="small" sx={imageDot} onClick={handleNext} disabled={activeStep === maxSteps - 1}><KeyboardArrowRightIcon /></Button>} backButton={<Button size="small" sx={imageDot} onClick={handleBack} disabled={activeStep === 0}><KeyboardArrowLeftIcon /></Button>} />
-                </Box>
+        <Swiper style={{ width: "425px", height: "385px", border: "3px solid #FFF" }} modules={[ Navigation, Pagination ]} centeredSlides="true" slidesPerView="auto" spaceBetween={10} navigation pagination={{ clickable: true }} loop={true}>
 
-              </Stack>
+          <SwiperSlide>
+            <img src={PortfolioHeader} alt="" />
+          </SwiperSlide>
 
-          ))}
+          <SwiperSlide>
+            <img src={PortfolioAbout} alt="" />
+          </SwiperSlide>
 
-        </SwipeableViews>
+          <SwiperSlide>
+            <img src={PortfolioProjects} alt="" />
+          </SwiperSlide>
 
-      )}
+          <SwiperSlide>
+            <img src={PortfolioContact} alt="" />
+          </SwiperSlide>
 
-      </Stack>
+          <SwiperSlide>
+            <img src={PortfolioMobile} alt="" />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src={PortfolioMobileTwo} alt="" />
+          </SwiperSlide>
+
+        </Swiper>
+
+      ) }
 
     </Fragment>
 
   );
 
-};
-
-
+}

@@ -1,12 +1,10 @@
-import React, { Fragment, useState } from 'react';
-import { Box, Button, Link, Paper, Stack, styled, Typography } from '@mui/material';
+import React, { Fragment } from 'react';
+import { Box, Link, Paper, Stack, styled, Typography, useMediaQuery } from '@mui/material';
 
-import MobileStepper from '@mui/material/MobileStepper';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-
-import { imageDot } from '../../theme/CustomTheme';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
+import '../../assets/style/Swiper.css';
 
 import forest from '../../assets/images/forest-transparent.png';
 import ParkHome from '../../assets/images/project-images/nps-finder/nps-finder-home.png';
@@ -23,39 +21,6 @@ document.onload = () => {
 }
 
 
-const images = [
-
-  {
-    id: 1,
-    url: ParkHome
-  },
-  {
-    id: 2,
-    url: ParkMarkers
-  },
-  {
-    id: 3,
-    url: ParkNewAddress
-  },
-  {
-    id: 4,
-    url: Park
-  },
-  {
-    id: 5,
-    url: ParkSearch
-  },
-  {
-    id: 6,
-    url: ParkMobile
-  },
-  {
-    id: 7,
-    url: ParkMobileTwo
-  }
-
-];
-
 const ForestBackground = styled(Box) `
   background-image: url(${forest}), url(${forest});
   background-size: 750px, 750px;
@@ -65,24 +30,6 @@ const ForestBackground = styled(Box) `
   width: 100%;
   height: 100%;
   z-index: 0;
-`;
-
-const PageImage = styled(Box) `
-  display: block;
-  height: 400px;
-  border: 3px solid #56903A;
-  border-radius: 5px;
-  object-fit: cover;
-  opacity: 0.75;
-`;
-
-const MobileImage = styled(Box) `
-  display: block;
-  height: 400px;
-  border: 3px solid #56903A;
-  border-radius: 5px;
-  object-fit: contain;
-  opacity: 0.75;
 `;
 
 const ProjectPaper = styled(Paper) `
@@ -160,7 +107,7 @@ const ParkPage = () => {
         <ForestBackground></ForestBackground>
         <Stack sx={{ position: "relative", textAlign: "center", px: { xs: 2, md: 7 } }} direction="column" justifyContent="center" alignItems="center">
 
-          <ParkImageSwipe />
+          <ParkSwiper />
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
 
@@ -231,68 +178,89 @@ const ParkPage = () => {
 export default ParkPage;
 
 
-// Note: SwipeableViews causes a dev-mode only warning; alternative is to remove Strict Mode
-export const ParkImageSwipe = () => {
+export const ParkSwiper = () => {
 
-  const [activeStep, setActiveStep] = useState(0);
-
-  const maxSteps = images.length;
-
-  const handleNext = () => {
-    setActiveStep( (prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep( (prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
-
+  const mobile = useMediaQuery('(max-width:800px)');
 
   return (
 
     <Fragment>
 
-      <Stack justifyContent="center" alignItems="center">
+      { !mobile ? (
 
-      { images.length && (
+        <Swiper style={{ width: "733px", height: "380px", border: "3px solid #56903A" }} modules={[ Navigation, Pagination ]} centeredSlides="true" slidesPerView="auto" spaceBetween={10} navigation pagination={{ clickable: true }} loop={true}>
 
-        <SwipeableViews axis={"x"} index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
+          <SwiperSlide>
+            <img src={ParkHome} alt="" />
+          </SwiperSlide>
 
-          { images.map((step) => (
+          <SwiperSlide>
+            <img src={ParkMarkers} alt="" />
+          </SwiperSlide>
 
-              <Stack direction="column" justifyContent="center" alignItems="center" key={step.id}>
+          <SwiperSlide>
+            <img src={ParkNewAddress} alt="" />
+          </SwiperSlide>
 
-                { activeStep > 4 ? (
+          <SwiperSlide>
+            <img src={Park} alt="" />
+          </SwiperSlide>
 
-                  <MobileImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+          <SwiperSlide>
+            <img src={ParkSearch} alt="" />
+          </SwiperSlide>
 
-                ) : (
+          <SwiperSlide>
+            <img src={ParkMobile} alt="" />
+          </SwiperSlide>
 
-                  <PageImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+          <SwiperSlide>
+            <img src={ParkMobileTwo} alt="" />
+          </SwiperSlide>
 
-                ) }
+        </Swiper>
 
-                <Box sx={{ position: "fixed", bottom: 45, width: { xs: "400px", md: "800px" }, px: { xs: 7, md: 5 }}}>
-                  <MobileStepper sx={{ backgroundColor: "transparent" }} variant="dots" position="static" steps={maxSteps} activeStep={activeStep} nextButton={<Button size="small" sx={imageDot} onClick={handleNext} disabled={activeStep === maxSteps - 1}><KeyboardArrowRightIcon /></Button>} backButton={<Button size="small" sx={imageDot} onClick={handleBack} disabled={activeStep === 0}><KeyboardArrowLeftIcon /></Button>} />
-                </Box>
+      ) : (
 
-              </Stack>
+        <Swiper style={{ width: "425px", height: "385px", border: "3px solid #56903A" }} modules={[ Navigation, Pagination ]} centeredSlides="true" slidesPerView="auto" spaceBetween={10} navigation pagination={{ clickable: true }} loop={true}>
 
-          ))}
+          <SwiperSlide>
+            <img src={ParkHome} alt="" />
+          </SwiperSlide>
 
-        </SwipeableViews>
+          <SwiperSlide>
+            <img src={ParkMarkers} alt="" />
+          </SwiperSlide>
 
-      )}
+          <SwiperSlide>
+            <img src={ParkNewAddress} alt="" />
+          </SwiperSlide>
 
-      </Stack>
+          <SwiperSlide>
+            <img src={Park} alt="" />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src={ParkSearch} alt="" />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src={ParkMobile} alt="" />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src={ParkMobileTwo} alt="" />
+          </SwiperSlide>
+
+        </Swiper>
+
+      ) }
 
     </Fragment>
 
   );
 
-};
+}
+
 
 

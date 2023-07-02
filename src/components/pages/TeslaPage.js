@@ -1,12 +1,10 @@
-import React, { Fragment, useState } from 'react';
-import { Box, Button, Link, Paper, Stack, styled, Typography } from '@mui/material';
+import React, { Fragment } from 'react';
+import { Box, Link, Paper, Stack, styled, Typography, useMediaQuery } from '@mui/material';
 
-import MobileStepper from '@mui/material/MobileStepper';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-
-import { imageDot } from '../../theme/CustomTheme';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
+import '../../assets/style/Swiper.css';
 
 import forest from '../../assets/images/forest-transparent.png';
 import TeslaHomepage from '../../assets/images/project-images/tesla-clone/tesla-homepage.png';
@@ -20,27 +18,6 @@ document.onload = () => {
 }
 
 
-const images = [
-
-  {
-    id: 1,
-    url: TeslaHomepage
-  },
-  {
-    id: 2,
-    url: TeslaMenu
-  },
-  {
-    id: 3,
-    url: TeslaFooter
-  },
-  {
-    id: 4,
-    url: TeslaMobile
-  }
-
-];
-
 const ForestBackground = styled(Box) `
   background-image: url(${forest}), url(${forest});
   background-size: 750px, 750px;
@@ -50,24 +27,6 @@ const ForestBackground = styled(Box) `
   width: 100%;
   height: 100%;
   z-index: 0;
-`;
-
-const PageImage = styled(Box) `
-  display: block;
-  height: 400px;
-  border: 3px solid #E82127;
-  border-radius: 5px;
-  object-fit: cover;
-  opacity: 0.75;
-`;
-
-const MobileImage = styled(Box) `
-  display: block;
-  height: 400px;
-  border: 3px solid #E82127;
-  border-radius: 5px;
-  object-fit: contain;
-  opacity: 0.75;
 `;
 
 const ProjectPaper = styled(Paper) `
@@ -145,7 +104,7 @@ const TeslaPage = () => {
         <ForestBackground></ForestBackground>
         <Stack sx={{ position: "relative", textAlign: "center", px: { xs: 2, md: 7 } }} direction="column" justifyContent="center" alignItems="center">
 
-          <TeslaImageSwipe />
+          <TeslaSwiper />
 
           <Stack direction="column" justifyContent="center" alignItems="center" spacing={5}>
 
@@ -193,66 +152,63 @@ const TeslaPage = () => {
 export default TeslaPage;
 
 
-// Note: SwipeableViews causes a dev-mode only warning; alternative is to remove Strict Mode
-export const TeslaImageSwipe = () => {
+export const TeslaSwiper = () => {
 
-  const [activeStep, setActiveStep] = useState(0);
-
-  const maxSteps = images.length;
-
-  const handleNext = () => {
-    setActiveStep( (prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep( (prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
+  const mobile = useMediaQuery('(max-width:800px)');
 
   return (
 
     <Fragment>
 
-      <Stack justifyContent="center" alignItems="center">
+      { !mobile ? (
 
-      { images.length && (
+        <Swiper style={{ width: "735px", height: "380px", border: "3px solid #E82127" }} modules={[ Navigation, Pagination ]} centeredSlides="true" slidesPerView="auto" spaceBetween={10} navigation pagination={{ clickable: true }} loop={true}>
 
-        <SwipeableViews axis={"x"} index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
+          <SwiperSlide>
+            <img src={TeslaHomepage} alt="" />
+          </SwiperSlide>
 
-          { images.map((step) => (
+          <SwiperSlide>
+            <img src={TeslaFooter} alt="" />
+          </SwiperSlide>
 
-              <Stack direction="column" justifyContent="center" alignItems="center" key={step.id}>
+          <SwiperSlide>
+            <img src={TeslaMenu} alt="" />
+          </SwiperSlide>
 
-                { activeStep > 2 ? (
+          <SwiperSlide>
+            <img src={TeslaMobile} alt="" />
+          </SwiperSlide>
 
-                  <MobileImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+        </Swiper>
 
-                ) : (
+      ) : (
 
-                  <PageImage sx={{ width: { xs: "425px", md: "800px" } }} component="img" src={step.url} alt={step.id} />
+        <Swiper style={{ width: "425px", height: "385px", border: "3px solid #E82127" }} modules={[ Navigation, Pagination ]} centeredSlides="true" slidesPerView="auto" spaceBetween={10} navigation pagination={{ clickable: true }} loop={true}>
 
-                ) }
+          <SwiperSlide>
+            <img src={TeslaHomepage} alt="" />
+          </SwiperSlide>
 
-                <Box sx={{ position: "fixed", bottom: 25, width: { xs: "400px", md: "800px" }, px: { xs: 7, md: 5 }} }>
-                  <MobileStepper sx={{ backgroundColor: "transparent" }} variant="dots" position="static" steps={maxSteps} activeStep={activeStep} nextButton={<Button size="small" sx={imageDot} onClick={handleNext} disabled={activeStep === maxSteps - 1}><KeyboardArrowRightIcon /></Button>} backButton={<Button size="small" sx={imageDot} onClick={handleBack} disabled={activeStep === 0}><KeyboardArrowLeftIcon /></Button>} />
-                </Box>
-              </Stack>
+          <SwiperSlide>
+            <img src={TeslaFooter} alt="" />
+          </SwiperSlide>
 
-          ))}
+          <SwiperSlide>
+            <img src={TeslaMenu} alt="" />
+          </SwiperSlide>
 
-        </SwipeableViews>
+          <SwiperSlide>
+            <img src={TeslaMobile} alt="" />
+          </SwiperSlide>
 
-      )}
+        </Swiper>
 
-      </Stack>
+      ) }
 
     </Fragment>
 
   );
 
-};
-
+}
 
