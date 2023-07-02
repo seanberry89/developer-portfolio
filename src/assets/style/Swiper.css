@@ -21,11 +21,13 @@
 }
 
 .swiper-button-prev {
+  font-family: swiper-icons;
   padding-left: 50px;
   color: #FFF;
 }
 
 .swiper-button-next {
+  font-family: swiper-icons;
   padding-right: 50px;
   color: #FFF;
 }
