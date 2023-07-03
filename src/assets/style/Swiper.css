@@ -20,22 +20,21 @@
   opacity: 0.75;
 }
 
-.swiper-button-prev {
-  font-family: swiper-icons;
-  padding-left: 50px;
+.swiper-button-prev, .swiper-button-next {
+  text-rendering: auto;
   color: #FFF;
+}
+
+.swiper-button-prev {
+  padding-left: 50px;
 }
 
 .swiper-button-next {
-  font-family: swiper-icons;
   padding-right: 50px;
-  color: #FFF;
 }
 
 .swiper-pagination {
-
   padding-bottom: 15px;
-
 }
 
 .swiper-pagination-bullet {
