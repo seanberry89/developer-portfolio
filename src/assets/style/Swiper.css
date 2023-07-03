@@ -20,9 +20,14 @@
   opacity: 0.75;
 }
 
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-family: swiper-icons;
+  content: "";
+}
+
 .swiper-button-prev, .swiper-button-next {
-  text-rendering: auto;
   color: #FFF;
+  text-rendering: auto;
 }
 
 .swiper-button-prev {
